@@ -19,8 +19,8 @@
   gap: 35px;
   padding: 25px;
   background-color: rgba(255, 235, 205, 0.651);
-  min-width: 250px;
-  height: 300px;
+  width: 270px;
+  min-height: 320px;
   border-radius: 8px;
   box-shadow: 5px 5px 5px rgba(79, 77, 77, 0.607);
 }

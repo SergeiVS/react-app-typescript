@@ -1,13 +1,11 @@
 import "./styles.css";
+import { v4 } from "uuid";
+import { ReactNode } from "react";
+import { Car } from "./types";
 
 function Homework06() {
-  type CarInfo = {
-    brand: string;
-    isDiesel: boolean;
-    price: number;
-  };
-
-  const cars: CarInfo[] = [
+  
+  const cars: Car[] = [
     { brand: "BMW", price: 20000, isDiesel: true },
     { brand: "Mercedes", price: 22000, isDiesel: false },
     { brand: "Porshe", price: 50000, isDiesel: true },
@@ -17,11 +15,11 @@ function Homework06() {
 
   cars.push({ brand: "Aston Martin", isDiesel: false, price: 120000 });
 
-  const carsCards = cars.map((car: CarInfo) => {
-    const { brand, price, isDiesel } = car;
-    const fuel = isDiesel ? "Diesel" : "Gas";
+  const carsCards: ReactNode[] = cars.map((carObject: Car) => {
+    const { brand, price, isDiesel } = carObject;
+    const fuel: string = isDiesel ? "Diesel" : "Gas";
     return (
-      <div className="car-card">
+      <div key={v4()} className="car-card">
         <h1 className="brand-name">{brand}</h1>
         <div className="property-wrapper">
           <p className="title">Fuel:</p>
@@ -29,7 +27,7 @@ function Homework06() {
         </div>
         <div className="property-wrapper">
           <p className="title">Price:</p>
-          <p className="property-value">$ {price}</p>
+          <p className="property-value">{`$ ${price}`}</p>
         </div>
       </div>
     );
