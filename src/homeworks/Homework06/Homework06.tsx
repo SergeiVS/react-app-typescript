@@ -15,6 +15,8 @@ function Homework06() {
     { brand: "Audi", price: 50000, isDiesel: true },
   ];
 
+  cars.push({ brand: "Aston Martin", isDiesel: false, price: 120000 });
+
   const carsCards = cars.map((car: CarInfo) => {
     const { brand, price, isDiesel } = car;
     const fuel = isDiesel ? "Diesel" : "Gas";
@@ -32,6 +34,7 @@ function Homework06() {
       </div>
     );
   });
+
   return <div className="homework-wrapper">{carsCards}</div>;
 }
 
