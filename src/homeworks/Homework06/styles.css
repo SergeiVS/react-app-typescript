@@ -1,0 +1,46 @@
+.homework-wrapper {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  background-image: url("https://cdn.motor1.com/images/mgl/NGeG6j/s3/2024-dodge-charger-daytona.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 35px;
+  padding: 25px;
+  background-color: rgba(255, 235, 205, 0.651);
+  min-width: 250px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px rgba(79, 77, 77, 0.607);
+}
+
+.brand-name {
+  font-size: 35px;
+  color: rgb(27, 27, 69);
+}
+
+.property-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.property-value {
+  font-size: 30px;
+  color: rgb(22, 65, 91);
+}
