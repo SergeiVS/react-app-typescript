@@ -1,8 +1,13 @@
 import "./styles.css";
-import { type } from "os";
 
 function Homework06() {
-  const cars = [
+  type CarInfo = {
+    brand: string;
+    isDiesel: boolean;
+    price: number;
+  };
+
+  const cars: CarInfo[] = [
     { brand: "BMW", price: 20000, isDiesel: true },
     { brand: "Mercedes", price: 22000, isDiesel: false },
     { brand: "Porshe", price: 50000, isDiesel: true },
@@ -10,25 +15,10 @@ function Homework06() {
     { brand: "Audi", price: 50000, isDiesel: true },
   ];
 
-  type CarInfo = {
-    brand: string;
-    isDiesel: boolean;
-    price: number;
-  };
-
-  const typedCars: CarInfo[] = cars.map((car) => {
-    return {
-      brand: car.brand,
-      price: car.price,
-      isDiesel: car.isDiesel,
-    };
-  });
-
-  const carsCards = typedCars.map((car) => {
+  const carsCards = cars.map((car: CarInfo) => {
     const { brand, price, isDiesel } = car;
     const fuel = isDiesel ? "Diesel" : "Gas";
     return (
-      // ключи не переданы т.к.typesctipt не знает v4
       <div className="car-card">
         <h1 className="brand-name">{brand}</h1>
         <div className="property-wrapper">
