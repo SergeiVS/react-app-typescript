@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  gap: 15px;
+  width: 300px;
+  padding: 20px;
+  border: 2px groove rgb(118, 96, 96);
+  border-radius: 8px;
+  background-color: bisque;
+}
+
+.avatar-container {
+  height: 200px;
+  align-self: center;
+}
+
+.avatar {
+  height: 100%;
+}
+
+.cards-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 15px;
+}
+
+.user-data {
+  font-size: 20px;
+}
+
+.listening {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

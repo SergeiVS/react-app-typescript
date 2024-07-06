@@ -1,4 +1,4 @@
-import { type } from "os";
+// import { type } from "os";
 import "./styles.css";
 
 function Lesson06() {

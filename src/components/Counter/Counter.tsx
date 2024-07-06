@@ -1,4 +1,4 @@
-import Button from "../../components/Button/Button";
+import Button from "components/Button/Button";
 
 import { CoumterProps } from "./types";
 import "./styles.css";

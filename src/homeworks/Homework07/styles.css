@@ -1,0 +1,7 @@
+.homework-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    background-color: rgb(141, 141, 198);
+}

@@ -1,0 +1,25 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px;
+  width: 590px;
+  min-height: 450px;
+  max-height: fit-content;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+}
+
+.inputs-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+}
