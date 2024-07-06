@@ -8,5 +8,5 @@ export interface ButtonProps {
   name: string;
   type?: ButtonType;
   imgSrc?: string | undefined;
-  onClick: (event: MouseEvent) => void;
+  onClick: (event?: MouseEvent) => void;
 }

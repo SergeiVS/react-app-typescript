@@ -1,6 +1,10 @@
-import SimpsonsCard from "components/SimpsonsCard/SimpsonsCard";
+import { MouseEvent } from "react";
 
-import { testUser } from "./testUser";
+import SimpsonsCard from "components/SimpsonsCard/SimpsonsCard";
+import LoginForm from "components/LoginForm/LoginForm";
+
+import { testUser } from "./testEntitys";
+import { loginFormProps } from "./testEntitys";
 import "./styles.css";
 
 function Homework07() {
@@ -12,6 +16,11 @@ function Homework07() {
         occupation={testUser.occupation}
         hobbies={testUser.hobbies}
         avatarUrl={testUser.avatarUrl}
+      />
+      <LoginForm
+        emailImputProps={loginFormProps.emailImputProps}
+        passwordInputProps={loginFormProps.passwordInputProps}
+        submitButtonProps={loginFormProps.submitButtonProps}
       />
     </div>
   );
