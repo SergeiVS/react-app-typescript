@@ -19,6 +19,11 @@ export const testSimpsonsCardProps: SimpsonsCardProps = {
 };
 
 export const loginFormProps: LoginFormProps = {
+  onSubmit: (event) => {
+    event.preventDefault();
+    console.log("Form submit works");
+  },
+
   emailImputProps: {
     name: "email",
     type: InputTypes.EMAIL,
@@ -38,9 +43,5 @@ export const loginFormProps: LoginFormProps = {
   submitButtonProps: {
     name: "Login",
     type: "submit",
-    onClick: (event?) => {
-      event?.preventDefault();
-      console.log("Button works");
-    },
   },
 };

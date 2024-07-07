@@ -3,10 +3,11 @@ import Input from "components/Input/Input";
 
 import { LoginFormProps } from "./types";
 import "./styles.css";
+import { loginFormProps } from "homeworks/Homework07/testPropsEntitys";
 
 function LoginForm(props: LoginFormProps) {
   return (
-    <form className="login-form">
+    <form className="login-form" onSubmit={loginFormProps.onSubmit}>
       <p className="form-title">Login form</p>
       <div className="inputs-fields-wrapper">
         <Input
@@ -25,7 +26,6 @@ function LoginForm(props: LoginFormProps) {
         />
       </div>
       <Button
-        onClick={props.submitButtonProps.onClick}
         name={props.submitButtonProps.name}
         type={props.submitButtonProps.type}
         imgSrc={props.submitButtonProps.imgSrc}

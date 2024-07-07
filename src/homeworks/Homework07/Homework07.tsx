@@ -59,6 +59,7 @@ function Homework07() {
       />
       <div className="components-wrapper">
         <LoginForm
+          onSubmit={loginFormProps.onSubmit}
           emailImputProps={loginFormProps.emailImputProps}
           passwordInputProps={loginFormProps.passwordInputProps}
           submitButtonProps={loginFormProps.submitButtonProps}
