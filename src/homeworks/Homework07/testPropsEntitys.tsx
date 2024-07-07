@@ -37,7 +37,7 @@ export const loginFormProps: LoginFormProps = {
 
   submitButtonProps: {
     name: "Login",
-    onClick: (event) => {
+    onClick: (event?) => {
       event?.preventDefault();
       console.log("Button works");
     },

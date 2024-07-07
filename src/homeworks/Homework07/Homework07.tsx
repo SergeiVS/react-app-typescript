@@ -10,7 +10,6 @@ import { loginFormProps } from "./testPropsEntitys";
 import "./styles.css";
 
 function Homework07() {
-  
   const [likesCount, setLikesCount] = useState<number>(0);
   const onLike = (): void => {
     setLikesCount((prevValue: number): number => prevValue + 1);
@@ -58,18 +57,20 @@ function Homework07() {
         hobbies={testSimpsonsCardProps.hobbies}
         avatarUrl={testSimpsonsCardProps.avatarUrl}
       />
-      <LoginForm
-        emailImputProps={loginFormProps.emailImputProps}
-        passwordInputProps={loginFormProps.passwordInputProps}
-        submitButtonProps={loginFormProps.submitButtonProps}
-      />
-      <Feedback
-        likeButtonProps={feedbackProps.likeButtonProps}
-        likesCount={feedbackProps.likesCount}
-        disLikeButtonProps={feedbackProps.disLikeButtonProps}
-        dislikesCount={feedbackProps.dislikesCount}
-        resetResultButtonProps={feedbackProps.resetResultButtonProps}
-      />
+      <div className="components-wrapper">
+        <LoginForm
+          emailImputProps={loginFormProps.emailImputProps}
+          passwordInputProps={loginFormProps.passwordInputProps}
+          submitButtonProps={loginFormProps.submitButtonProps}
+        />
+        <Feedback
+          likeButtonProps={feedbackProps.likeButtonProps}
+          likesCount={feedbackProps.likesCount}
+          disLikeButtonProps={feedbackProps.disLikeButtonProps}
+          dislikesCount={feedbackProps.dislikesCount}
+          resetResultButtonProps={feedbackProps.resetResultButtonProps}
+        />
+      </div>
     </div>
   );
 }

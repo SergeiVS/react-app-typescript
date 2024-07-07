@@ -5,3 +5,9 @@
     padding: 40px;
     background-color: rgb(141, 141, 198);
 }
+
+.components-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
