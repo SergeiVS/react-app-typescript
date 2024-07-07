@@ -3,11 +3,10 @@ import Input from "components/Input/Input";
 
 import { LoginFormProps } from "./types";
 import "./styles.css";
-import { loginFormProps } from "homeworks/Homework07/testPropsEntitys";
 
 function LoginForm(props: LoginFormProps) {
   return (
-    <form className="login-form" onSubmit={loginFormProps.onSubmit}>
+    <form className="login-form" onSubmit={props.onSubmit}>
       <p className="form-title">Login form</p>
       <div className="inputs-fields-wrapper">
         <Input
