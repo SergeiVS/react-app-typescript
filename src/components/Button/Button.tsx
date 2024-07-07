@@ -1,16 +1,11 @@
-import "./styles.css";
 import { ButtonProps } from "./types";
+import "./styles.css";
 
-function Button({
-  name = "Send",
-  type = "button",
-  onClick,
-  imgSrc = undefined,
-}: ButtonProps) {
+function Button({ name, type = "button", onClick, imgSrc }: ButtonProps) {
   return (
     <button className={`button-component `} type={type} onClick={onClick}>
       {!name && <img className="button-image" src={imgSrc} alt="icon" />}
-      {!imgSrc && name}
+      {name}
     </button>
   );
 }

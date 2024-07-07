@@ -1,8 +1,8 @@
-import { User } from "components/SimpsonsCard/types";
+import { SimpsonsCardProps } from "components/SimpsonsCard/types";
 import { InputTypes } from "components/Input/types";
 import { LoginFormProps } from "components/LoginForm/types";
 
-export const testUser: User = {
+export const testSimpsonsCardProps: SimpsonsCardProps = {
   firstName: "Homer",
   lastName: "Simpson",
   occupation: "Nuclear safety inspector",
@@ -37,7 +37,7 @@ export const loginFormProps: LoginFormProps = {
 
   submitButtonProps: {
     name: "Login",
-    onClick: (event)=> {
+    onClick: (event) => {
       event?.preventDefault();
       console.log("Button works");
     },
