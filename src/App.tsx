@@ -6,7 +6,7 @@ import GlobalStyles from "styles/GlobalStyles";
 import Lesson08 from "lessons/Lesson08/Lesson08";
 
 // import Homework06 from "homeworks/Homework06/Homework06";
-import Homework07 from "homeworks/Homework07/Homework07";
+// import Homework07 from "homeworks/Homework07/Homework07";
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
       <GlobalStyles />
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
-      {/* <Lesson08 /> */}
+      <Lesson08 />
       {/* <Homework06 /> */}
-      <Homework07 />
+      {/* <Homework07 /> */}
     </div>
   );
 }

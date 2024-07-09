@@ -13,7 +13,7 @@ export const ButtonControl = styled("div")`
   width: 300px;
 `;
 
-export const CommonBoxStyles = styled("div")`
+export const CommonBoxStyles = css`
   display: flex;
   justify-content: center;
   align-items: center;
