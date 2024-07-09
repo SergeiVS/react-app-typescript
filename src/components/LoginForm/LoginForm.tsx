@@ -1,34 +1,30 @@
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 
-import { LoginFormProps } from "./types";
 import "./styles.css";
+import  {LoginFormProps}  from "./types";
 
-function LoginForm(props: LoginFormProps) {
+function LoginForm({onSubmit}:LoginFormProps) {
   return (
-    <form className="login-form" onSubmit={props.onSubmit}>
+    <form className="login-form" onSubmit={onSubmit}>
       <p className="form-title">Login form</p>
       <div className="inputs-fields-wrapper">
         <Input
-          name={props.emailImputProps.name}
-          type={props.emailImputProps.type}
-          placeholder={props.emailImputProps.placeholder}
-          label={props.emailImputProps.label}
-          id={props.emailImputProps.id}
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+          label="Email"
+          id="email-input"
         />
         <Input
-          name={props.passwordInputProps.name}
-          type={props.passwordInputProps.type}
-          placeholder={props.passwordInputProps.placeholder}
-          label={props.passwordInputProps.label}
-          id={props.passwordInputProps.id}
+          name="password"
+          type="password"
+          placeholder="Enter your password"
+          label="Password"
+          id="password-input"
         />
       </div>
-      <Button
-        name={props.submitButtonProps.name}
-        type={props.submitButtonProps.type}
-        imgSrc={props.submitButtonProps.imgSrc}
-      />
+      <Button name="Login" type="submit" onClick={() => {}} />
     </form>
   );
 }

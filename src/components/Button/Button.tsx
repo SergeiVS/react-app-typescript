@@ -1,12 +1,25 @@
 import { ButtonProps } from "./types";
-import "./styles.css";
+import { SyledButton } from "./styles";
+import { ButtonImage } from "./styles";
 
-function Button({ name, type = "button", onClick, imgSrc }: ButtonProps) {
+function Button({
+  name,
+  type = "button",
+  onClick,
+  imgSrc,
+  disabled = false,
+  isRed = false,
+}: ButtonProps) {
   return (
-    <button className={`button-component `} type={type} onClick={onClick}>
-      {!name && <img className="button-image" src={imgSrc} alt="icon" />}
-      {name}
-    </button>
+    <SyledButton
+      $isRed={isRed}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {imgSrc && <ButtonImage src={imgSrc} alt="icon" />}
+      {!imgSrc && name}
+    </SyledButton>
   );
 }
 

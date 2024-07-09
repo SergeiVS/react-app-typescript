@@ -1,15 +1,9 @@
-export enum InputTypes {
-  CHECK_BOX = "checkbox",
-  EMAIL = "email",
-  NUMBER = "number",
-  PASSWORD = "password",
-  TEXT = "text",
-}
+import {HTMLInputTypeAttribute} from "react"
 
 export interface InputProps {
   name: string;
-  type: InputTypes;
-  placeholder: string;
+  type?: HTMLInputTypeAttribute;
+  placeholder?: string;
   label: string;
   id: string;
 }

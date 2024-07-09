@@ -1,12 +1,11 @@
 import { useState } from "react";
+import { FormEvent } from "react";
 
 import SimpsonsCard from "components/SimpsonsCard/SimpsonsCard";
 import LoginForm from "components/LoginForm/LoginForm";
 import Feedback from "components/Feedback/Feedback";
 
-import { FeedbackProps } from "components/Feedback/types";
 import { testSimpsonsCardProps } from "./testPropsEntitys";
-import { loginFormProps } from "./testPropsEntitys";
 import "./styles.css";
 
 function Homework07() {
@@ -25,27 +24,9 @@ function Homework07() {
     setLikesCount(0);
   };
 
-  const feedbackProps: FeedbackProps = {
-    likeButtonProps: {
-      name: undefined,
-      imgSrc: "https://pngimg.com/d/like_PNG49.png",
-      onClick: onLike,
-    },
-
-    likesCount: likesCount,
-
-    disLikeButtonProps: {
-      name: undefined,
-      imgSrc: "https://cdn-icons-png.flaticon.com/512/126/126504.png",
-      onClick: onDislike,
-    },
-
-    dislikesCount: dislikesCount,
-
-    resetResultButtonProps: {
-      name: "Reset results",
-      onClick: onReset,
-    },
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    console.log("button works");
   };
 
   return (
@@ -58,18 +39,15 @@ function Homework07() {
         avatarUrl={testSimpsonsCardProps.avatarUrl}
       />
       <div className="components-wrapper">
-        <LoginForm
-          onSubmit={loginFormProps.onSubmit}
-          emailImputProps={loginFormProps.emailImputProps}
-          passwordInputProps={loginFormProps.passwordInputProps}
-          submitButtonProps={loginFormProps.submitButtonProps}
-        />
+        <LoginForm onSubmit={onSubmit} />
         <Feedback
-          likeButtonProps={feedbackProps.likeButtonProps}
-          likesCount={feedbackProps.likesCount}
-          disLikeButtonProps={feedbackProps.disLikeButtonProps}
-          dislikesCount={feedbackProps.dislikesCount}
-          resetResultButtonProps={feedbackProps.resetResultButtonProps}
+          likesCount={likesCount}
+          onLike={onLike}
+          likeImgSrc="https://pngimg.com/d/like_PNG49.png"
+          dislikesCount={dislikesCount}
+          onDislike={onDislike}
+          disLikeImpSrc="https://cdn-icons-png.flaticon.com/512/126/126504.png"
+          onReset={onReset}
         />
       </div>
     </div>

@@ -1,9 +1,11 @@
 import { ButtonProps } from "components/Button/types";
 
 export interface FeedbackProps {
-  likeButtonProps: ButtonProps;
+  onLike: () => void;
   likesCount: number;
-  disLikeButtonProps: ButtonProps;
+  likeImgSrc: string;
+  onDislike: () => void;
   dislikesCount: number;
-  resetResultButtonProps: ButtonProps;
+  disLikeImpSrc: string;
+  onReset: () => void;
 }

@@ -1,6 +1,5 @@
 import { SimpsonsCardProps } from "components/SimpsonsCard/types";
-import { InputTypes } from "components/Input/types";
-import { LoginFormProps } from "components/LoginForm/types";
+
 
 export const testSimpsonsCardProps: SimpsonsCardProps = {
   firstName: "Homer",
@@ -18,30 +17,3 @@ export const testSimpsonsCardProps: SimpsonsCardProps = {
     "https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png",
 };
 
-export const loginFormProps: LoginFormProps = {
-  onSubmit: (event) => {
-    event.preventDefault();
-    console.log("Form submit works");
-  },
-
-  emailImputProps: {
-    name: "email",
-    type: InputTypes.EMAIL,
-    placeholder: "Enter your email",
-    label: "Email",
-    id: "email-input",
-  },
-
-  passwordInputProps: {
-    name: "password",
-    type: InputTypes.PASSWORD,
-    placeholder: "Enter your password",
-    label: "Password",
-    id: "password-input",
-  },
-
-  submitButtonProps: {
-    name: "Login",
-    type: "submit",
-  },
-};

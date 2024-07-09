@@ -1,18 +1,18 @@
 import { InputProps } from "./types";
 import "./styles.css";
 
-function Input(props: InputProps) {
+function Input({ label, name, type, placeholder, id }: InputProps) {
   return (
     <div className="input-wrapper">
-      <label className="inputLable" htmlFor={props.id}>
-        {props.label}
+      <label className="inputLable" htmlFor={id}>
+        {label}
       </label>
       <input
         className="input"
-        id={props.id}
-        type={props.type}
-        placeholder={props.placeholder}
-        name={props.name}
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        name={name}
       />
     </div>
   );
