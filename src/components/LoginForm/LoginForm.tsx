@@ -1,14 +1,17 @@
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 
-import "./styles.css";
-import  {LoginFormProps}  from "./types";
+import { StyledLoginForm } from "./styles";
+import { StyledFormTitle } from "./styles";
+import { InputsFieldsWrapper } from "./styles";
 
-function LoginForm({onSubmit}:LoginFormProps) {
+import { LoginFormProps } from "./types";
+
+function LoginForm({ onSubmit }: LoginFormProps) {
   return (
-    <form className="login-form" onSubmit={onSubmit}>
-      <p className="form-title">Login form</p>
-      <div className="inputs-fields-wrapper">
+    <StyledLoginForm onSubmit={onSubmit}>
+      <StyledFormTitle className="form-title">Login form</StyledFormTitle>
+      <InputsFieldsWrapper>
         <Input
           name="email"
           type="email"
@@ -23,9 +26,9 @@ function LoginForm({onSubmit}:LoginFormProps) {
           label="Password"
           id="password-input"
         />
-      </div>
+      </InputsFieldsWrapper>
       <Button name="Login" type="submit" onClick={() => {}} />
-    </form>
+    </StyledLoginForm>
   );
 }
 //экспорт формы

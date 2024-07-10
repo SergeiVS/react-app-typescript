@@ -1,7 +1,10 @@
 import Button from "components/Button/Button";
 
 import { FeedbackProps } from "./types";
-import "./styles.css";
+import { FeedbackComponentWrapper } from "./styles";
+import { FeedbackFieldsWrapper } from "./styles";
+import { FeedbackField } from "./styles";
+import { OutputField } from "./styles";
 
 function Feedback({
   likesCount,
@@ -14,23 +17,19 @@ function Feedback({
   onReset,
 }: FeedbackProps) {
   return (
-    <div className="feedback-component-wrapper">
-      <div className="feedback-fields-wrapper">
-        <div className="feedback-field">
+    <FeedbackComponentWrapper>
+      <FeedbackFieldsWrapper>
+        <FeedbackField>
           <Button name={""} onClick={onLike} imgSrc={likeImgSrc} />
-          <div className="output-field">
-            <p>{likesCount}</p>
-          </div>
-        </div>
-        <div className="feedback-field">
+          <OutputField>{likesCount}</OutputField>
+        </FeedbackField>
+        <FeedbackField>
           <Button name={""} onClick={onDislike} imgSrc={disLikeImpSrc} />
-          <div className="output-field">
-            <p>{dislikesCount}</p>
-          </div>
-        </div>
-      </div>
+          <OutputField>{dislikesCount}</OutputField>
+        </FeedbackField>
+      </FeedbackFieldsWrapper>
       <Button name={"Reset results"} onClick={onReset} />
-    </div>
+    </FeedbackComponentWrapper>
   );
 }
 

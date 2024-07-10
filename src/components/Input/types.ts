@@ -1,4 +1,4 @@
-import {HTMLInputTypeAttribute} from "react"
+import { HTMLInputTypeAttribute } from "react";
 
 export interface InputProps {
   name: string;
@@ -6,4 +6,6 @@ export interface InputProps {
   placeholder?: string;
   label: string;
   id: string;
+  disabled?: boolean;
+  error?: "Some error" | undefined;
 }

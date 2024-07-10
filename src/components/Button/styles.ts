@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 interface StyledButtonProps {
   $isRed: boolean;
 }
@@ -20,7 +21,6 @@ export const SyledButton = styled("button")<StyledButtonProps>`
   width: 100%;
   height: 70px;
   outline: none;
-  cursor: pointer;
   border-radius: 4px;
   font-size: 20px;
   font-weight: 600;
