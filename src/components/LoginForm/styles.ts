@@ -1,4 +1,6 @@
-.login-form {
+import styled from "@emotion/styled";
+
+export const StyledLoginForm = styled("form")`
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -8,18 +10,18 @@
   border: 1px solid #000000;
   border-radius: 4px;
   background-color: white;
-}
+`;
 
-.form-title {
+export const StyledFormTitle = styled("p")`
   font-size: 24px;
   font-weight: 400;
   color: black;
-}
+`;
 
-.inputs-fields-wrapper {
+export const InputsFieldsWrapper = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 20px;
   flex: 1;
   width: 100%;
-}
+`;

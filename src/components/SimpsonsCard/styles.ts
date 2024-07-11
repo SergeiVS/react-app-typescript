@@ -1,4 +1,6 @@
-.card {
+import styled from "@emotion/styled";
+
+export const SimpsonsCardWrapper = styled("div")`
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -9,33 +11,32 @@
   border: 2px groove rgb(118, 96, 96);
   border-radius: 8px;
   background-color: bisque;
-}
+`;
 
-.avatar-container {
+export const AvatarContainer = styled("div")`
   height: 200px;
   align-self: center;
-}
+`;
 
-.avatar {
+export const Avatar = styled("img")`
   height: 100%;
-}
-
-.cards-block {
+`;
+export const CardsBlock = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
+`;
 
-.title {
+export const Titel = styled("p")`
   font-size: 15px;
-}
+`;
 
-.user-data {
+export const UserData = styled("p")`
   font-size: 20px;
-}
+`;
 
-.listening {
+export const Listening = styled("ul")`
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
+`;

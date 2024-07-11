@@ -1,31 +1,34 @@
-.feedback-component-wrapper {
+import styled from "@emotion/styled";
+
+export const FeedbackComponentWrapper= styled("div") `
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 15px;
   min-width: 400px;
-  height: fit-content;
+  height: fit-content
+  ;
   border: 1px solid white;
   border-radius: 10px;
   padding: 20px;
   background-color: rgb(26, 35, 53);
   color: white;
-}
+`
 
-.feedback-fields-wrapper {
+export const FeedbackFieldsWrapper=styled("div") `
   display: flex;
   width: 100%;
   gap: 20px;
-}
+`
 
-.feedback-field {
+export const FeedbackField= styled("div") `
   display: flex;
   width: 100%;
   gap: 20px;
-}
+`
 
-.output-field {
+export const OutputField =styled ("div")`
   display: flex;
   height: 100%;
   width: 100px;
@@ -34,4 +37,4 @@
   color: black;
   justify-content: center;
   align-items: center;
-}
+`
