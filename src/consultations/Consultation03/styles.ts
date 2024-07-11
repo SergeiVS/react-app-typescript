@@ -10,6 +10,6 @@ export const ConsultationWrapper = styled.div`
   padding: 80px;
 `;
 
-export const ButtonControl = styled.button`
+export const ButtonControl = styled.div`
   width: 300px;
 `;

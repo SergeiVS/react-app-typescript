@@ -8,6 +8,6 @@ export interface InputProps {
   id: string;
   disabled?: boolean;
   error?: "Some error" | undefined;
-  value?: string;
+  value: string | undefined;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }

@@ -25,6 +25,7 @@ function Homework08() {
         label="Normal Input"
         id="normal-input"
         error={undefined}
+        value={undefined}
       />
       <Input
         name="text-disabled"
@@ -32,6 +33,7 @@ function Homework08() {
         label="Disabled Input"
         id="disabled-input"
         disabled={true}
+        value={undefined}
       />
       <Input
         name="text-with-error"
@@ -39,6 +41,7 @@ function Homework08() {
         label="Input with error"
         id="errored-input"
         error="Some error"
+        value={undefined}
       />
     </Lesson08Wrapper>
   );
