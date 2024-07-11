@@ -1,14 +1,18 @@
 import styled from "@emotion/styled";
 
+import {colors} from "styles/colors"
+
+
 interface StyledInputProps {
-  $error: undefined | "Some error";
+  $error: undefined | string;
 }
 
 const setBorderColor = ($error: undefined | string) => {
-  if ($error === "Some error") {
-    return "red";
+  if (typeof $error === "string") {
+    return colors.ERROR;
+  } else {
+    return "black";
   }
-  return "black";
 };
 
 export const InputWrapper = styled("div")`
@@ -31,15 +35,16 @@ export const InputElemnt = styled("input")<StyledInputProps>`
   font-size: 16px;
   background-color: white;
   border: 1px solid;
-  border-color: ${({ $error: $error }) => setBorderColor($error)};
+  border-color: ${({ $error }) => setBorderColor($error)};
   border-radius: 4px;
   padding: 12px;
-  ::placeholder {
+  &::placeholder {
     color: rgb 12 11 10;
     font-size: 16px;
   }
-  :disabled {
-    ::placeholder {
+  &:disabled {
+    cursor: not-allowed;
+    &::placeholder {
       color: black;
     }
     background-color: gray;

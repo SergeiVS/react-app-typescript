@@ -1,9 +1,7 @@
 import Button from "components/Button/Button";
 
 import { CoumterProps } from "./types";
-import { CounterWrapper } from "./styles";
-import { ButtonControl } from "./styles";
-import { Count } from "./styles";
+import { CounterWrapper, ButtonControl, Count } from "./styles";
 
 function Counter(props: CoumterProps) {
   return (

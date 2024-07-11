@@ -1,6 +1,5 @@
 import { ButtonProps } from "./types";
-import { SyledButton } from "./styles";
-import { ButtonImage } from "./styles";
+import { SyledButton, ButtonImage} from "./styles";
 
 function Button({
   name,

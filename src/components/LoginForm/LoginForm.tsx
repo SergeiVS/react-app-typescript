@@ -18,6 +18,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           placeholder="Enter your email"
           label="Email"
           id="email-input"
+          
         />
         <Input
           name="password"
@@ -25,6 +26,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           placeholder="Enter your password"
           label="Password"
           id="password-input"
+          
         />
       </InputsFieldsWrapper>
       <Button name="Login" type="submit" onClick={() => {}} />

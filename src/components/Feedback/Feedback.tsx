@@ -1,10 +1,12 @@
 import Button from "components/Button/Button";
 
 import { FeedbackProps } from "./types";
-import { FeedbackComponentWrapper } from "./styles";
-import { FeedbackFieldsWrapper } from "./styles";
-import { FeedbackField } from "./styles";
-import { OutputField } from "./styles";
+import {
+  FeedbackComponentWrapper,
+  FeedbackFieldsWrapper,
+  FeedbackField,
+  OutputField,
+} from "./styles";
 
 function Feedback({
   likesCount,

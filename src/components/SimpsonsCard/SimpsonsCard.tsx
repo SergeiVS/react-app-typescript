@@ -2,13 +2,16 @@ import { ReactNode } from "react";
 import { v4 } from "uuid";
 
 import { SimpsonsCardProps } from "./types";
-import { SimpsonsCardWrapper } from "./styles";
-import { AvatarContainer } from "./styles";
-import { Avatar } from "./styles";
-import { Titel } from "./styles";
-import { UserData } from "./styles";
-import { CardsBlock } from "./styles";
-import { Listening } from "./styles";
+import {
+  SimpsonsCardWrapper,
+  AvatarContainer,
+  Avatar,
+  Titel,
+  UserData,
+  CardsBlock,
+  Listening,
+} from "./styles";
+
 
 function SimpsonsCard({
   firstName,
