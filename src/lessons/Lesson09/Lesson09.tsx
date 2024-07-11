@@ -39,7 +39,7 @@ function Lesson_09() {
   const [searchRandonCatFact, setSearchRandonCatFact] = useState<
     string | undefined
   >(undefined);
-  const [catFast, setCatFact] = useState<string>("");
+  const [catFast, setCatFact] = useState<string | undefined>("");
   const [error, setError] = useState<string | undefined>(undefined);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -47,8 +47,9 @@ function Lesson_09() {
   };
 
   const getRandomCatFact = async () => {
-    // setSearchRandonCatFact(undefined);
-    // setError(undefined);
+    setCatFact(undefined);
+    setError(undefined);
+
     const response = await fetch("https://catfact.ninja/fact");
     const result = await response.json();
     if (response.ok) {
