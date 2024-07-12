@@ -10,7 +10,7 @@ function Input({
   id,
   disabled,
   error,
-  value,
+  value=undefined,
   onChange,
 }: InputProps) {
   return (

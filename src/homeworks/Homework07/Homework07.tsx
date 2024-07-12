@@ -39,7 +39,12 @@ function Homework07() {
         avatarUrl={testSimpsonsCardProps.avatarUrl}
       />
       <div className="components-wrapper">
-        <LoginForm onSubmit={onSubmit} />
+        {/* //Это безусловный костыль надо через контрось элементов получать значения и выводить их */}
+        <LoginForm
+          onSubmit={onSubmit}
+          valueEmail={undefined}
+          valuePassword={undefined}
+        />
         <Feedback
           likesCount={likesCount}
           onLike={onLike}

@@ -7,7 +7,7 @@ import { InputsFieldsWrapper } from "./styles";
 
 import { LoginFormProps } from "./types";
 
-function LoginForm({ onSubmit }: LoginFormProps) {
+function LoginForm({ onSubmit, valueEmail, valuePassword }: LoginFormProps) {
   return (
     <StyledLoginForm onSubmit={onSubmit}>
       <StyledFormTitle className="form-title">Login form</StyledFormTitle>
@@ -18,7 +18,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           placeholder="Enter your email"
           label="Email"
           id="email-input"
-          
+          value={valueEmail}
         />
         <Input
           name="password"
@@ -26,7 +26,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           placeholder="Enter your password"
           label="Password"
           id="password-input"
-          
+          value={valuePassword}
         />
       </InputsFieldsWrapper>
       <Button name="Login" type="submit" onClick={() => {}} />

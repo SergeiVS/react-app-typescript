@@ -21,6 +21,7 @@ export const SyledButton = styled("button")<StyledButtonProps>`
   font-weight: 600;
   background-color: ${({ $isRed }) => getButtonColor($isRed)};
   color: rgba(255, 255, 255, 1);
+  outline: none;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
