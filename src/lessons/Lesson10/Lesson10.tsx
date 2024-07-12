@@ -13,8 +13,15 @@ import { Lesson_10Wrapper } from "./styles";
 // {"country": "Poland", "name": "Zachodniopomorska School of Science and Engineering", "alpha_two_code": "PL", 
 // "state-province": null, "domains": ["zut.edu.pl"], "web_pages": ["http://www.zut.edu.pl/"]
 
+// export interface UniCardProps{
+//   name: string;
+//    webSite: string [];
+// }
+
 
 function Lesson10() {
+
+  
   return <Lesson_10Wrapper>Lesson10</Lesson_10Wrapper>;
 }
 
