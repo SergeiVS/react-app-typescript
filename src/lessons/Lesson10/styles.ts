@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 
+
 export const Lesson_10Div = styled.div`
 display: flex;
 flex: 1;
@@ -31,3 +32,4 @@ padding-top: 20px;
 padding: 50px;
 gap: 30px;
 `
+
