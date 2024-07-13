@@ -17,7 +17,4 @@ export const SearchFormContainer = styled("form")`
 
 export const Title = styled("p")`
   font-size: 26px;
-  font-weight: 600;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 `;
