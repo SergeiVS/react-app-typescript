@@ -1,5 +1,6 @@
-
 import { useState } from "react";
+
+import UniCard from "components/UniCard/UniCard";
 
 import { Lesson_10Div, Lesson_10Header, Lesson_10Cards } from "./styles";
 import { University } from "./types";
@@ -22,15 +23,17 @@ import { University } from "./types";
 //    webSite: string [];
 // }
 
-
-function Lesson10(){
-    return(
-        <Lesson_10Div>
-            <Lesson_10Header><p>Universities</p></Lesson_10Header>
-            <Lesson_10Cards></Lesson_10Cards>
-        </Lesson_10Div>
-    )
+function Lesson10() {
+  return (
+    <Lesson_10Div>
+      <Lesson_10Header>
+        <p>Universities</p>
+      </Lesson_10Header>
+      <Lesson_10Cards>
+        <UniCard name="Test Uni" webSite={["test uni website"]} />
+      </Lesson_10Cards>
+    </Lesson_10Div>
+  );
 }
-
 
 export default Lesson10;
