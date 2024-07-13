@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import UniCard from "components/UniCard/UniCard";
+import SearchForm from "components/SearchForm/SearchForm";
 
 import { Lesson_10Div, Lesson_10Header, Lesson_10Cards } from "./styles";
 import { University } from "./types";
@@ -28,6 +29,11 @@ function Lesson10() {
     <Lesson_10Div>
       <Lesson_10Header>
         <p>Universities</p>
+        <SearchForm
+          value="test velue"
+          onChange={() => {}}
+          onSubmit={() => {}}
+        />
       </Lesson_10Header>
       <Lesson_10Cards>
         <UniCard name="Test Uni" webSite={["test uni website"]} />
