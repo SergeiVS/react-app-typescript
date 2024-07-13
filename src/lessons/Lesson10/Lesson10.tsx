@@ -1,4 +1,8 @@
-import { Lesson_10Wrapper } from "./styles";
+ Lesson10Styles
+import { Lesson_10Div, Lesson_10Header, Lesson_10Cards } from "./styles";
+
+
+
 
 // 1. Разместите на странице Input с label="Country", в который пользователь может ввести название страны
 // 2. Разместите на странице Button "Get Universities", по клику на которую, отправляется GET запрос на http://universities.hipolabs.com/search?country=COUNTRY
@@ -18,11 +22,15 @@ import { Lesson_10Wrapper } from "./styles";
 //    webSite: string [];
 // }
 
-
-function Lesson10() {
-
-  
-  return <Lesson_10Wrapper>Lesson10</Lesson_10Wrapper>;
+function Lesson10(){
+    return(
+        <Lesson_10Div>
+            <Lesson_10Header><p>Universities</p></Lesson_10Header>
+            <Lesson_10Cards></Lesson_10Cards>
+        </Lesson_10Div>
+    )
 }
+
+
 
 export default Lesson10;
