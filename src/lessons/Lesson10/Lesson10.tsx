@@ -1,4 +1,4 @@
-import { Lesson_10Wrapper } from "./styles";
+import { Lesson_10Div, Lesson_10Header, Lesson_10Cards } from "./styles";
 
 // 1. Разместите на странице Input с label="Country", в который пользователь может ввести название страны
 // 2. Разместите на странице Button "Get Universities", по клику на которую, отправляется GET запрос на http://universities.hipolabs.com/search?country=COUNTRY
@@ -10,7 +10,7 @@ import { Lesson_10Wrapper } from "./styles";
 // 7. Стили на ваше усмотрение, контент тоже на ваше усмотрение
 // 8. Все нужно делать в компоненте Lesson_10
 
-// {"country": "Poland", "name": "Zachodniopomorska School of Science and Engineering", "alpha_two_code": "PL", 
+// {"country": "Poland", "name": "Zachodniopomorska School of Science and Engineering", "alpha_two_code": "PL",
 // "state-province": null, "domains": ["zut.edu.pl"], "web_pages": ["http://www.zut.edu.pl/"]
 
 // export interface UniCardProps{
@@ -18,11 +18,15 @@ import { Lesson_10Wrapper } from "./styles";
 //    webSite: string [];
 // }
 
-
 function Lesson10() {
-
-  
-  return <Lesson_10Wrapper>Lesson10</Lesson_10Wrapper>;
+  return (
+    <Lesson_10Div>
+      <Lesson_10Header>
+        <p>Universities</p>
+      </Lesson_10Header>
+      <Lesson_10Cards></Lesson_10Cards>
+    </Lesson_10Div>
+  );
 }
 
 export default Lesson10;
