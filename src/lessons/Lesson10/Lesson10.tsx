@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 import UniCard from "components/UniCard/UniCard";
 import SearchForm from "components/SearchForm/SearchForm";
@@ -25,14 +25,23 @@ import { University } from "./types";
 // }
 
 function Lesson10() {
+  const [countryName, setCountry] = useState<string | undefined>("");
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCountry(event.target.value);
+  };
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <Lesson_10Div>
       <Lesson_10Header>
-        <p>Universities</p>
+        <p>{countryName}</p>
         <SearchForm
-          value="test velue"
-          onChange={() => {}}
-          onSubmit={() => {}}
+          value={countryName}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
         />
       </Lesson_10Header>
       <Lesson_10Cards>
