@@ -27,7 +27,9 @@ function Lesson10() {
   );
   const [searchError, setSearchError] = useState<string | undefined>(undefined);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
-
+  const [countryNameToRender, setCountryNameToRender] = useState<
+    string | undefined
+  >(undefined);
   const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -62,13 +64,14 @@ function Lesson10() {
     setIsDisabled(true);
     getRequestResults();
     setSearchResult(searchResult);
+    setCountryNameToRender(countryName);
     setIsDisabled(false);
   };
 
   return (
     <Lesson_10Div>
       <Lesson_10Header>
-        <Title>Top universities of {countryName}</Title>
+        <Title>Top universities of {countryNameToRender}</Title>
         <SearchForm
           value={countryName}
           onChange={handleChange}
