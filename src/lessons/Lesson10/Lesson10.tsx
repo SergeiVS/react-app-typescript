@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, ReactNode, useState } from "react";
 
 import UniCard from "components/UniCard/UniCard";
 import SearchForm from "components/SearchForm/SearchForm";
@@ -19,19 +19,119 @@ import { University } from "./types";
 // {"country": "Poland", "name": "Zachodniopomorska School of Science and Engineering", "alpha_two_code": "PL",
 // "state-province": null, "domains": ["zut.edu.pl"], "web_pages": ["http://www.zut.edu.pl/"]
 
-// export interface UniCardProps{
-//   name: string;
-//    webSite: string [];
-// }
-
 function Lesson10() {
   const [countryName, setCountry] = useState<string | undefined>("");
+  const [searchResult, setSearchResult] = useState<University[] | undefined>(
+    undefined
+  );
+  const [searchError, setSearchError] = useState<string | undefined>(undefined);
+
+  const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
+
+  //testvalue
+  const testUnis: University[] | undefined = [
+    {
+      country: "Estonia",
+      name: "Estonian Academy of Arts",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["artun.ee"],
+      web_pages: ["http://www.artun.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "Estonian Business School",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["ebs.ee"],
+      web_pages: ["http://www.ebs.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "Estonian Academy of Music and Theatre",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["ema.edu.ee"],
+      web_pages: ["http://www.ema.edu.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "Estonian University of Life Sciences",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["emu.ee"],
+      web_pages: ["http://www.emu.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "Tartu Health Care College",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["nooruse.ee"],
+      web_pages: ["http://www.nooruse.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "Estonian Academy of Security Sciences",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["sisekaitse.ee"],
+      web_pages: ["http://www.sisekaitse.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "University of Applied Sciences",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["tktk.ee"],
+      web_pages: ["http://www.tktk.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "Tallinn University",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["tlu.ee"],
+      web_pages: ["http://www.tlu.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "Tallinn University of Technology",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["ttu.ee"],
+      web_pages: ["http://www.ttu.ee/"],
+    },
+    {
+      country: "Estonia",
+      name: "University of Tartu",
+      alpha_two_code: "EE",
+      "state-province": null,
+      domains: ["ut.ee"],
+      web_pages: ["http://www.ut.ee/"],
+    },
+  ];
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCountry(event.target.value);
   };
+
+  const getRequestResults = async () => {
+    //Это то что напишет Володя. первые 15 объектов кладуться в setSearchResult()
+  };
+
+  const uniCardsToRender = (): ReactNode[] | undefined => {
+    return searchResult?.map((uniObject: University): ReactNode => {
+      console.log(uniObject);
+      //как мы и говорили я поменял массив сайтов на единственный стринг(первый из массива)
+      return <UniCard name={uniObject.name} webSite={uniObject.web_pages[0]} />;
+    });
+  };
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    getRequestResults();
+    setSearchResult(testUnis);
   };
 
   return (
@@ -45,7 +145,8 @@ function Lesson10() {
         />
       </Lesson_10Header>
       <Lesson_10Cards>
-        <UniCard name="Test Uni" webSite={["test uni website"]} />
+        {searchResult && uniCardsToRender()}
+        {searchError && "Some search error"}
       </Lesson_10Cards>
     </Lesson_10Div>
   );

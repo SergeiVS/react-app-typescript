@@ -25,13 +25,9 @@ function App() {
       {/* <Homework06 /> */}
       {/* <Homework07 /> */}
       {/* <Homework08 /> */}
-
       {/*<Homework09 />*/}
-
       {/* <Homework09 /> */}
-
       {/* <Consultation03 /> */}
-      <Lesson10 />
     </>
   );
 }
