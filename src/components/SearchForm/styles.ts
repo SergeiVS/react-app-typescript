@@ -11,7 +11,7 @@ export const SearchFormContainer = styled("form")`
 `;
 
 export const ButtonControl = styled.div`
-width: 250px;
+width: 270px;
 `
 export const InputControl = styled.div`
 width: 500px;
