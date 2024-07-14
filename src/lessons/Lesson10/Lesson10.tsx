@@ -4,7 +4,15 @@ import axios from "axios";
 import UniCard from "components/UniCard/UniCard";
 import SearchForm from "components/SearchForm/SearchForm";
 
-import { Lesson_10Div, Lesson_10Header, Lesson_10Cards, Title, StyledError, ErrorMessage, TitelDiv } from "./styles";
+import {
+  Lesson_10Div,
+  Lesson_10Header,
+  Lesson_10Cards,
+  Title,
+  StyledError,
+  ErrorMessage,
+  TitelDiv,
+} from "./styles";
 import { MAX_UNIVERSITIES, Universities, University } from "./types";
 
 // 1. Разместите на странице Input с label="Country", в который пользователь может ввести название страны
@@ -21,7 +29,6 @@ import { MAX_UNIVERSITIES, Universities, University } from "./types";
 // "state-province": null, "domains": ["zut.edu.pl"], "web_pages": ["http://www.zut.edu.pl/"]
 
 function Lesson10() {
-
   const [countryName, setCountry] = useState<string | undefined>("");
   const [searchResult, setSearchResult] = useState<Universities | undefined>(
     []
@@ -39,7 +46,6 @@ function Lesson10() {
   };
 
   const getRequestResults = async () => {
-
     try {
       axios.get<Universities>(searchUrl).then((response) => {
         const limitResponse: Universities = response.data.slice(
@@ -82,8 +88,8 @@ function Lesson10() {
     <Lesson_10Div>
       <Lesson_10Header>
         <TitelDiv>
-        <Title>Top universities of</Title>
-        <Title>{countryNameToRender}</Title>
+          <Title>Top universities of</Title>
+          <Title>{countryNameToRender}</Title>
         </TitelDiv>
         <SearchForm
           value={countryName}
@@ -94,7 +100,11 @@ function Lesson10() {
       </Lesson_10Header>
       <Lesson_10Cards>
         {searchResult && uniCardsToRender()}
-        <StyledError><ErrorMessage>{searchError && "Some search error"}</ErrorMessage></StyledError>
+        {searchError && (
+          <StyledError>
+            <ErrorMessage>{searchError} </ErrorMessage>
+          </StyledError>
+        )}
       </Lesson_10Cards>
     </Lesson_10Div>
   );
