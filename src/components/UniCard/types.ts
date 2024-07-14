@@ -1,4 +1,4 @@
 export interface UniCardProps {
   name: string;
-  webSite: string[];
+  webSite: string;
 }

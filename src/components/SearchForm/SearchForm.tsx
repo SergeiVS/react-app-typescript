@@ -6,6 +6,7 @@ import { SearchFormProps } from "./types";
 import { SearchFormContainer, ButtonControl, InputControl } from "./styles";
 
 function SearchForm({ value, onSubmit, onChange }: SearchFormProps) {
+
   return (
     <SearchFormContainer onSubmit={onSubmit}>
       <InputControl>
