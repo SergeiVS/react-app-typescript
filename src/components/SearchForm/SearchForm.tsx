@@ -6,6 +6,7 @@ import { SearchFormProps } from "./types";
 import { SearchFormContainer, Title } from "./styles";
 
 function SearchForm({ value, onSubmit, onChange }: SearchFormProps) {
+
   return (
     <SearchFormContainer onSubmit={onSubmit}>
       <Title>World's top universities</Title>
