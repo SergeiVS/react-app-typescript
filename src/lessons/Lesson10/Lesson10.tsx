@@ -1,10 +1,11 @@
 import { ChangeEvent, FormEvent, ReactNode, useState } from "react";
+import axios from "axios";
 
 import UniCard from "components/UniCard/UniCard";
 import SearchForm from "components/SearchForm/SearchForm";
 
 import { Lesson_10Div, Lesson_10Header, Lesson_10Cards } from "./styles";
-import { University } from "./types";
+import { MAX_UNIVERSITIES, Universities, University } from "./types";
 
 // 1. Разместите на странице Input с label="Country", в который пользователь может ввести название страны
 // 2. Разместите на странице Button "Get Universities", по клику на которую, отправляется GET запрос на http://universities.hipolabs.com/search?country=COUNTRY
@@ -21,15 +22,15 @@ import { University } from "./types";
 
 function Lesson10() {
   const [countryName, setCountry] = useState<string | undefined>("");
-  const [searchResult, setSearchResult] = useState<University[] | undefined>(
-    undefined
+  const [searchResult, setSearchResult] = useState<Universities | undefined>(
+    []
   );
   const [searchError, setSearchError] = useState<string | undefined>(undefined);
 
   const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
 
   //testvalue
-  const testUnis: University[] | undefined = [
+  const testUnis: Universities | undefined = [
     {
       country: "Estonia",
       name: "Estonian Academy of Arts",
@@ -117,7 +118,19 @@ function Lesson10() {
   };
 
   const getRequestResults = async () => {
-    //Это то что напишет Володя. первые 15 объектов кладуться в setSearchResult()
+    try {
+      axios.get<Universities>(searchUrl).then((response) => {
+        const limitResponse: Universities = response.data.slice(
+          0,
+          MAX_UNIVERSITIES
+        );
+
+        setSearchResult(limitResponse);
+      });
+    } catch (error) {
+      setSearchError("Some Network Error");
+      console.error(error);
+    }
   };
 
   const uniCardsToRender = (): ReactNode[] | undefined => {
@@ -131,7 +144,7 @@ function Lesson10() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     getRequestResults();
-    setSearchResult(testUnis);
+    // setSearchResult(testUnis);
   };
 
   return (

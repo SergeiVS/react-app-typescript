@@ -6,3 +6,6 @@ export interface University {
   domains: string[];
   web_pages: string[];
 }
+
+export type Universities = University[];
+export const MAX_UNIVERSITIES : number = 15;
