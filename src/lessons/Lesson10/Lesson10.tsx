@@ -49,6 +49,7 @@ function Lesson10() {
 
         if (limitResponse.length == 0) {
           const message: string = "No universities found!";
+          
           setSearchError(message);
           alert(message);
         }
