@@ -3,13 +3,13 @@ import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 
 import { SearchFormProps } from "./types";
-import { SearchFormContainer, Title } from "./styles";
+import { SearchFormContainer, ButtonControl, InputControl } from "./styles";
 
 function SearchForm({ value, onSubmit, onChange }: SearchFormProps) {
 
   return (
     <SearchFormContainer onSubmit={onSubmit}>
-      <Title>World's top universities</Title>
+      <InputControl>
       <Input
         id="input-id"
         name="country-input"
@@ -19,7 +19,8 @@ function SearchForm({ value, onSubmit, onChange }: SearchFormProps) {
         value={value}
         onChange={onChange}
       />
-      <Button name={"Get Universities"} type="submit"/>
+      </InputControl>
+     <ButtonControl><Button name={"Get Universities"} type="submit"/></ButtonControl>
     </SearchFormContainer>
   );
 }

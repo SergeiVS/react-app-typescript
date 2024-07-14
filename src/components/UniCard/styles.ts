@@ -7,12 +7,10 @@ export const CardWrapper = styled.div`
   height: 200px;
   gap: 20px;
   padding: 20px;
-  border: 2px solid black;
+  border: 1px solid lightgray;
   border-radius: 8px;
-  background-color: #639FAB;
-  -webkit-box-shadow: -1px 2px 19px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 2px 19px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 2px 19px 0px rgba(0, 0, 0, 0.75);
+  background-color: #E9FAFF;
+  box-shadow: 0px 1px 10px 0px #9F9F9F;
 `;
 
 export const CardsBlock = styled.div`
