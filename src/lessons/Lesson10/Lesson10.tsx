@@ -10,7 +10,6 @@ import {
   Lesson_10Cards,
   Title,
   StyledError,
-  ErrorMessage,
   TitelDiv,
 } from "./styles";
 import { MAX_UNIVERSITIES, Universities, University } from "./types";
@@ -102,7 +101,7 @@ function Lesson10() {
         {searchResult && uniCardsToRender()}
         {searchError && (
           <StyledError>
-            <ErrorMessage>{searchError} </ErrorMessage>
+            {searchError}
           </StyledError>
         )}
       </Lesson_10Cards>
