@@ -4,7 +4,7 @@ import axios from "axios";
 import UniCard from "components/UniCard/UniCard";
 import SearchForm from "components/SearchForm/SearchForm";
 
-import { Lesson_10Div, Lesson_10Header, Lesson_10Cards } from "./styles";
+import { Lesson_10Div, Lesson_10Header, Lesson_10Cards, Title } from "./styles";
 import { MAX_UNIVERSITIES, Universities, University } from "./types";
 
 // 1. Разместите на странице Input с label="Country", в который пользователь может ввести название страны
@@ -68,7 +68,7 @@ function Lesson10() {
   return (
     <Lesson_10Div>
       <Lesson_10Header>
-        <p>{countryName}</p>
+        <Title>Top universities of {countryName}</Title>
         <SearchForm
           value={countryName}
           onChange={handleChange}

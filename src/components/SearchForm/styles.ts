@@ -2,19 +2,19 @@ import styled from "@emotion/styled";
 
 export const SearchFormContainer = styled("form")`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 500px;
-  min-height: 250px;
-  max-height: fit-content;
+  width: 900px;
+  height: 100px;
   border: none;
-  padding: 40px;
-  border-radius: 8px;
-  background-color: grey;
-  opacity: 0.8;
   gap: 20px;
+  font-size: black;
 `;
 
-export const Title = styled("p")`
-  font-size: 26px;
-`;
+export const ButtonControl = styled.div`
+width: 250px;
+`
+export const InputControl = styled.div`
+width: 500px;
+`
+
+
