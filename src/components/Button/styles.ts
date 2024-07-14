@@ -8,7 +8,7 @@ const getButtonColor = ($isRed: boolean | undefined) => {
   if ($isRed) {
     return "red";
   } else {
-    return "#AEE8FB";
+    return "#639FAB";
   }
 };
 
@@ -17,7 +17,7 @@ export const SyledButton = styled("button")<StyledButtonProps>`
   height: 50px;
   outline: none;
   border-radius: 4px;
-  border: 1px solid lightgray;
+  border: 1px solid grey;
   font-size: 20px;
   font-weight: 600;
   background-color: ${({ $isRed }) => getButtonColor($isRed)};
