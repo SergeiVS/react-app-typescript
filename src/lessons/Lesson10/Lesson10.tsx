@@ -3,7 +3,7 @@ import { useState } from "react";
 import UniCard from "components/UniCard/UniCard";
 import SearchForm from "components/SearchForm/SearchForm";
 
-import { Lesson_10Div, Lesson_10Header, Lesson_10Cards } from "./styles";
+import { Lesson_10Div, Lesson_10Header, Lesson_10Cards, Title } from "./styles";
 import { University } from "./types";
 
 // 1. Разместите на странице Input с label="Country", в который пользователь может ввести название страны
@@ -28,9 +28,9 @@ function Lesson10() {
   return (
     <Lesson_10Div>
       <Lesson_10Header>
-        <p>Universities</p>
+      <Title>Top universities of "value"</Title>
         <SearchForm
-          value="test velue"
+          value="test value"
           onChange={() => {}}
           onSubmit={() => {}}
         />

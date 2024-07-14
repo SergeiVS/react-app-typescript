@@ -31,7 +31,6 @@ function App() {
       {/* <Homework09 /> */}
 
       {/* <Consultation03 /> */}
-      <Lesson10 />
     </>
   );
 }
