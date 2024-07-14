@@ -126,10 +126,18 @@ function Lesson10() {
         );
 
         setSearchResult(limitResponse);
+        console.log(limitResponse.length);
+
+        if (limitResponse.length == 0) {
+          const message: string = "No universities found!";
+          setSearchError(message);
+          alert(message);
+        }
       });
     } catch (error) {
       setSearchError("Some Network Error");
       console.error(error);
+      alert(searchError);
     }
   };
 
