@@ -4,6 +4,7 @@ import axios from "axios";
 import UniCard from "components/UniCard/UniCard";
 import SearchForm from "components/SearchForm/SearchForm";
 
+import { v4 } from "uuid";
 import {
   Lesson_10Div,
   Lesson_10Header,
@@ -29,9 +30,7 @@ import { MAX_UNIVERSITIES, Universities, University } from "./types";
 
 function Lesson10() {
   const [countryName, setCountry] = useState<string | undefined>("");
-  const [searchResult, setSearchResult] = useState<Universities | undefined>(
-    []
-  );
+  const [searchResult, setSearchResult] = useState<Universities>([]);
   const [searchError, setSearchError] = useState<string | undefined>(undefined);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [countryNameToRender, setCountryNameToRender] = useState<
@@ -46,6 +45,7 @@ function Lesson10() {
 
   const getRequestResults = async () => {
     setSearchError(undefined);
+
     try {
       axios.get<Universities>(searchUrl).then((response) => {
         const limitResponse: Universities = response.data.slice(
@@ -54,7 +54,6 @@ function Lesson10() {
         );
 
         setSearchResult(limitResponse);
-        console.log(limitResponse.length);
 
         if (limitResponse.length == 0) {
           const message: string = "No universities found!";
@@ -70,7 +69,13 @@ function Lesson10() {
 
   const uniCardsToRender = (): ReactNode[] | undefined => {
     return searchResult?.map((uniObject: University): ReactNode => {
-      return <UniCard name={uniObject.name} webSite={uniObject.web_pages[0]} />;
+      return (
+        <UniCard
+          key={v4()}
+          name={uniObject.name}
+          webSite={uniObject.web_pages[0]}
+        />
+      );
     });
   };
 

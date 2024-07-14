@@ -6,7 +6,7 @@ function Button({
   type = "button",
   onClick,
   imgSrc,
-  disabled = false,
+  disabled,
   isRed = false,
 }: ButtonProps) {
   return (
