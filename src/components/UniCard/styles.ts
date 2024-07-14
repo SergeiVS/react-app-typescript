@@ -33,7 +33,7 @@ export const UniName = styled.p`
 `;
 
 export const UniPage = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   font-style: italic;
 `;
