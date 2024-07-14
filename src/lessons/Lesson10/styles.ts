@@ -6,20 +6,23 @@ display: flex;
 flex: 1;
 flex-direction: column;
 gap: 30px;
-background-color: white;
+background-color: #f1f0ed;
 align-items: center;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 26px;
 `
 
 export const Lesson_10Header = styled.div`
 display: flex;
-padding-left: 50px;
-padding-right: 50px;
-padding-top: 50px;
+background-color: white;
+padding-left: 80px;
+padding-top: 20px;
 padding-bottom: 20px;
 width: 100%;
-height: 150px;
+justify-content: space-between;
 border-bottom: 1px solid black;
+height: fit-content;
+align-items: center;
 `
 
 export const Lesson_10Cards = styled.div`
@@ -28,8 +31,10 @@ min-height: 500px;
 max-height: fit-content;
 display: flex;
 flex-wrap: wrap;
-padding-top: 20px;
-padding: 50px;
+padding: 20px 80px 80px 80px;
 gap: 30px;
 `
+export const Title = styled("p")`
+  font-size: 26px;
+`;
 

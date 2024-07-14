@@ -1,25 +1,26 @@
-
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 
 import { SearchFormProps } from "./types";
-import { SearchFormContainer, Title } from "./styles";
+import { SearchFormContainer, ButtonControl, InputControl } from "./styles";
 
-function SearchForm({ value, onSubmit, onChange }: SearchFormProps) {
-
+function SearchForm({ value, onSubmit, onChange, disabled }: SearchFormProps) {
   return (
     <SearchFormContainer onSubmit={onSubmit}>
-      <Title>World's top universities</Title>
-      <Input
-        id="input-id"
-        name="country-input"
-        type="text"
-        placeholder="Enter your country"
-        label="Country"
-        value={value}
-        onChange={onChange}
-      />
-      <Button name={"Get Universities"} type="submit"/>
+      <InputControl>
+        <Input
+          id="input-id"
+          name="country-input"
+          type="text"
+          placeholder="Enter your country"
+          label="Country"
+          value={value}
+          onChange={onChange}
+        />{" "}
+      </InputControl>
+      <ButtonControl>
+        <Button name={"Get Universities"} type="submit" disabled={disabled} />
+      </ButtonControl>
     </SearchFormContainer>
   );
 }
