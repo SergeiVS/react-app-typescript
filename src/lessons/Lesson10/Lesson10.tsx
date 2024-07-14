@@ -21,6 +21,7 @@ import { MAX_UNIVERSITIES, Universities, University } from "./types";
 // "state-province": null, "domains": ["zut.edu.pl"], "web_pages": ["http://www.zut.edu.pl/"]
 
 function Lesson10() {
+
   const [countryName, setCountry] = useState<string | undefined>("");
   const [searchResult, setSearchResult] = useState<Universities | undefined>(
     []
@@ -30,6 +31,7 @@ function Lesson10() {
   const [countryNameToRender, setCountryNameToRender] = useState<
     string | undefined
   >(undefined);
+
   const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,6 +39,7 @@ function Lesson10() {
   };
 
   const getRequestResults = async () => {
+
     try {
       axios.get<Universities>(searchUrl).then((response) => {
         const limitResponse: Universities = response.data.slice(
@@ -55,7 +58,6 @@ function Lesson10() {
       });
     } catch (error) {
       setSearchError("Some Network Error");
-      console.error(error);
       alert(searchError);
     }
   };
