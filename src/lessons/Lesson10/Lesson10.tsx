@@ -45,6 +45,7 @@ function Lesson10() {
   };
 
   const getRequestResults = async () => {
+    setSearchError(undefined);
     try {
       axios.get<Universities>(searchUrl).then((response) => {
         const limitResponse: Universities = response.data.slice(
@@ -99,11 +100,7 @@ function Lesson10() {
       </Lesson_10Header>
       <Lesson_10Cards>
         {searchResult && uniCardsToRender()}
-        {searchError && (
-          <StyledError>
-            {searchError}
-          </StyledError>
-        )}
+        {searchError && <StyledError>{searchError}</StyledError>}
       </Lesson_10Cards>
     </Lesson_10Div>
   );
