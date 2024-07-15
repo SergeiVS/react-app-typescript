@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 
+import backgroundImage from 'assets/28468.jpg';
+
 export const Lesson_10Div = styled.div`
   display: flex;
   flex: 1;
@@ -34,7 +36,7 @@ export const Lesson_10Cards = styled.div`
   flex-wrap: wrap;
   padding: 40px 80px 80px 80px;
   gap: 30px;
-  background-image: url("https://images.pexels.com/photos/1122865/pexels-photo-1122865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url(${backgroundImage});
   background-size: cover;
 `;
 

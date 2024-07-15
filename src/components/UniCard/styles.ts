@@ -9,8 +9,8 @@ export const CardWrapper = styled.div`
   padding: 20px;
   border: 1px solid grey;
   border-radius: 8px;
-  background-color: #639FAB;
-  opacity: 80%;
+  background-color: #c1d9dd;
+  opacity: 90%;
   box-shadow: 0px 1px 10px 0px #9f9f9f;
 `;
 
