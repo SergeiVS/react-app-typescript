@@ -25,33 +25,45 @@ function Lesson10() {
   >(undefined);
 
   const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
+  // const searchUrl: string = `http://universities.hipolas.com/search?counry=${countryName}`;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCountry(event.target.value);
   };
 
-  const getRequestResults = async () => {
+  const getRequestResults = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setSearchError(undefined);
     setCountryNameToRender(undefined);
-  
-    try {
-      axios.get<Universities>(searchUrl).then((response) => {
-        const limitResponse: Universities = response.data.slice(
-          0,
-          MAX_UNIVERSITIES
-        );
+    setIsDisabled(true);
+    console.log(isDisabled);
+    if (countryName) {
+      try {
+        axios.get<Universities>(searchUrl).then((response) => {
+          const limitResponse: Universities = response.data.slice(
+            0,
+            MAX_UNIVERSITIES
+          );
 
-        setSearchResult(limitResponse);
+          setSearchResult(limitResponse);
 
-        if (limitResponse.length == 0) {
-          const message: string = "No universities found!";
-          setSearchError(message);
-          alert(message);
-        }
-      });
-    } catch (error) {
-      setSearchError("Some Network Error");
-      alert(searchError);
+          if (limitResponse.length === 0) {
+            const message: string = "No universities found!";
+            setSearchError(message);
+            alert(message);
+          }
+        });
+      } catch (error: any) {
+        setSearchError("Some Network Error");
+        alert(searchError);
+      } finally {
+        setIsDisabled(false);
+        setCountryNameToRender(countryName);
+      }
+    } else {
+      setSearchResult([]);
+      setSearchError("Country name could not be empty");
+      setIsDisabled(false);
     }
   };
 
@@ -67,16 +79,6 @@ function Lesson10() {
     });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    setIsDisabled(true);
-    getRequestResults();
-    setSearchResult(searchResult);
-    setCountryNameToRender(countryName);
-    setIsDisabled(false);
-  };
-
   return (
     <Lesson_10Div>
       <Lesson_10Header>
@@ -87,7 +89,7 @@ function Lesson10() {
         <SearchForm
           value={countryName}
           onChange={handleChange}
-          onSubmit={handleSubmit}
+          onSubmit={getRequestResults}
           disabled={isDisabled}
         />
       </Lesson_10Header>

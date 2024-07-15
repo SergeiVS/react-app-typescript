@@ -31,7 +31,7 @@ export const UniName = styled.p`
   font-weight: 500;
 `;
 
-export const UniPage = styled.p`
+export const UniPage = styled.a`
   overflow-wrap: break-word;
   font-size: 18px;
   font-weight: 500;
