@@ -12,12 +12,15 @@ import {
   Title,
   StyledError,
   TitelDiv,
+  BlancP,
 } from "./styles";
 import { MAX_UNIVERSITIES, Universities, University } from "./types";
 
 function Lesson10() {
   const [countryName, setCountry] = useState<string | undefined>("");
-  const [searchResult, setSearchResult] = useState<Universities>([]);
+  const [searchResult, setSearchResult] = useState<Universities | undefined>(
+    undefined
+  );
   const [searchError, setSearchError] = useState<string | undefined>(undefined);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [countryNameToRender, setCountryNameToRender] = useState<
@@ -34,9 +37,9 @@ function Lesson10() {
   const getRequestResults = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSearchError(undefined);
-    setCountryNameToRender(undefined);
+    setSearchResult(undefined);
     setIsDisabled(true);
-    console.log(isDisabled);
+
     if (countryName) {
       try {
         axios.get<Universities>(searchUrl).then((response) => {
@@ -58,7 +61,7 @@ function Lesson10() {
         alert(searchError);
       } finally {
         setIsDisabled(false);
-        setCountryNameToRender(countryName);
+        // setCountryNameToRender(countryName);
       }
     } else {
       setSearchResult([]);
@@ -84,7 +87,7 @@ function Lesson10() {
       <Lesson_10Header>
         <TitelDiv>
           <Title>Top universities of</Title>
-          <Title>{countryNameToRender}</Title>
+          <BlancP>{searchResult && <Title>{countryName}</Title>}</BlancP>
         </TitelDiv>
         <SearchForm
           value={countryName}

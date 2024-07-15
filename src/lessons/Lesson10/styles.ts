@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import backgroundImage from 'assets/28468.jpg';
+import backgroundImage from "assets/28468.jpg";
 
 export const Lesson_10Div = styled.div`
   display: flex;
@@ -56,4 +56,7 @@ export const StyledError = styled.div`
   float: left;
   padding: 20px 30px;
   color: red;
+`;
+export const BlancP = styled.p`
+  height: 30px;
 `;
