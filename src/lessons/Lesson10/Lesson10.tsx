@@ -23,9 +23,6 @@ function Lesson10() {
   );
   const [searchError, setSearchError] = useState<string | undefined>(undefined);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
-  const [countryNameToRender, setCountryNameToRender] = useState<
-    string | undefined
-  >(undefined);
 
   const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
   // const searchUrl: string = `http://universities.hipolas.com/search?counry=${countryName}`;
@@ -97,8 +94,8 @@ function Lesson10() {
         />
       </Lesson_10Header>
       <Lesson_10Cards>
-        {searchResult && uniCardsToRender()}
-        {searchError && <StyledError>{searchError}</StyledError>}
+        {!!searchResult && uniCardsToRender()}
+        {!!searchError && <StyledError>{searchError}</StyledError>}
       </Lesson_10Cards>
     </Lesson_10Div>
   );

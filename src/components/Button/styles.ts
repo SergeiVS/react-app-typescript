@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors } from "styles/colors";
 
 interface StyledButtonProps {
   $isRed: boolean;
@@ -8,13 +9,13 @@ const getButtonColor = ($isRed: boolean | undefined) => {
   if ($isRed) {
     return "red";
   } else {
-    return "#639FAB";
+    return colors.PRIMARY_BLUE;
   }
 };
 
 export const SyledButton = styled("button")<StyledButtonProps>`
   width: 100%;
-  height: 50px;
+  height: 70px;
   outline: none;
   border-radius: 4px;
   border: 1px solid grey;

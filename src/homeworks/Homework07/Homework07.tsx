@@ -40,11 +40,7 @@ function Homework07() {
       />
       <div className="components-wrapper">
         {/* //Это безусловный костыль надо через контрось элементов получать значения и выводить их */}
-        <LoginForm
-          onSubmit={onSubmit}
-          valueEmail={undefined}
-          valuePassword={undefined}
-        />
+        <LoginForm />
         <Feedback
           likesCount={likesCount}
           onLike={onLike}

@@ -1,6 +1,10 @@
 import { InputProps } from "./types";
-import { InputWrapper, InputLabel, InputElemnt } from "./styles";
-
+import {
+  InputWrapper,
+  InputLabel,
+  InputElemnt,
+  ErrorContainer,
+} from "./styles";
 
 function Input({
   label,
@@ -10,7 +14,7 @@ function Input({
   id,
   disabled,
   error,
-  value=undefined,
+  value = undefined,
   onChange,
 }: InputProps) {
   return (
@@ -26,6 +30,7 @@ function Input({
         value={value}
         onChange={onChange}
       />
+      {!!error && <ErrorContainer>{error}</ErrorContainer>}
     </InputWrapper>
   );
 }

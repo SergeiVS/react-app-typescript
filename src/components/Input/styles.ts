@@ -16,9 +16,10 @@ const setBorderColor = ($error: undefined | string) => {
 
 export const InputWrapper = styled("div")`
   display: flex;
+  flex-direction: column;
   width: 100%;
   gap: 15px;
-  align-items: center;
+  
 `;
 
 export const InputLabel = styled("label")`
@@ -48,4 +49,8 @@ export const InputElemnt = styled("input")<StyledInputProps>`
     }
     background-color: gray;
   }
+`;
+
+export const ErrorContainer = styled.div`
+  color: ${colors.ERROR};
 `;

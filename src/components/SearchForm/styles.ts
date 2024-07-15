@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const SearchFormContainer = styled("form")`
   display: flex;
-  align-items: center;
+  align-items: bottom;
   width: 900px;
   height: 100px;
   border: none;
