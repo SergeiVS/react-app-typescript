@@ -32,7 +32,8 @@ function Lesson10() {
 
   const getRequestResults = async () => {
     setSearchError(undefined);
-
+    setCountryNameToRender(undefined);
+  
     try {
       axios.get<Universities>(searchUrl).then((response) => {
         const limitResponse: Universities = response.data.slice(

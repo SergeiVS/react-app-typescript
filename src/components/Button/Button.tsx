@@ -1,12 +1,12 @@
 import { ButtonProps } from "./types";
-import { SyledButton, ButtonImage} from "./styles";
+import { SyledButton, ButtonImage } from "./styles";
 
 function Button({
   name,
   type = "button",
   onClick,
   imgSrc,
-  disabled,
+  disabled = false,
   isRed = false,
 }: ButtonProps) {
   return (

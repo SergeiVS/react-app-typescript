@@ -18,7 +18,6 @@ export const CardsBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-items: center;
-  /* align-items: center; */
   gap: 10px;
 `;
 
@@ -33,6 +32,7 @@ export const UniName = styled.p`
 `;
 
 export const UniPage = styled.p`
+  overflow-wrap: break-word;
   font-size: 18px;
   font-weight: 500;
   font-style: italic;

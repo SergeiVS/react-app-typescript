@@ -16,7 +16,7 @@ function SearchForm({ value, onSubmit, onChange, disabled }: SearchFormProps) {
           label="Country"
           value={value}
           onChange={onChange}
-        />{" "}
+        />
       </InputControl>
       <ButtonControl>
         <Button name={"Get Universities"} type="submit" disabled={disabled} />
