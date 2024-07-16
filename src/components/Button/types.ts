@@ -1,5 +1,4 @@
-import { MouseEvent } from "react"; 
-
+import { MouseEvent } from "react";
 
 export type ButtonType = "button" | "submit" | "reset" | undefined;
 
@@ -10,5 +9,4 @@ export interface ButtonProps {
   onClick?: (event: MouseEvent) => void;
   disabled?: boolean;
   isRed?: boolean;
-  color?: string
 }
