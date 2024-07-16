@@ -5,4 +5,5 @@ export interface SearchFormProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
   disabled?: boolean;
+  color?: string;
 }

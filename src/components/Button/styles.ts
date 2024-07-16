@@ -3,13 +3,14 @@ import { colors } from "styles/colors";
 
 interface StyledButtonProps {
   $isRed: boolean;
+  color:string
 }
 
-const getButtonColor = ($isRed: boolean | undefined) => {
+const getButtonColor = ($isRed: boolean | undefined, color:string) => {
   if ($isRed) {
     return "red";
   } else {
-    return colors.PRIMARY_BLUE;
+    return {color}
   }
 };
 
@@ -21,7 +22,7 @@ export const SyledButton = styled("button")<StyledButtonProps>`
   border: 1px solid grey;
   font-size: 20px;
   font-weight: 600;
-  background-color: ${({ $isRed }) => getButtonColor($isRed)};
+  background-color: ${({ $isRed, color }) => getButtonColor($isRed, color)};
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
   &:disabled {
