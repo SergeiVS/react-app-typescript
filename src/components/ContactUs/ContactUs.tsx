@@ -7,7 +7,7 @@ import Input from "components/Input/Input";
 import { ContactForm, FormTitle, ButtonContainer } from "./styles";
 import { CONTACT_US_FORM_NAMES } from "./types";
 
-function ContuctUs() {
+function ContactUs() {
   const validationSchema = Yup.object().shape({
     [CONTACT_US_FORM_NAMES.FULLNAME]: Yup.string()
       .required("This field is required")
@@ -79,4 +79,4 @@ function ContuctUs() {
   );
 }
 
-export default ContuctUs;
+export default ContactUs;
