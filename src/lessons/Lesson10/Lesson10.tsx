@@ -25,7 +25,6 @@ function Lesson10() {
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
-  // const searchUrl: string = `http://universities.hipolas.com/search?counry=${countryName}`;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCountry(event.target.value);
@@ -39,21 +38,21 @@ function Lesson10() {
 
     if (countryName) {
       try {
-        axios.get<Universities>(searchUrl).then((response) => {
-          const limitResponse: Universities = response.data.slice(
-            0,
-            MAX_UNIVERSITIES
-          );
+        const response = await axios.get<Universities>(searchUrl);
+        const limitResponse: Universities = response.data.slice(
+          0,
+          MAX_UNIVERSITIES
+        );
 
-          setSearchResult(limitResponse);
+        setSearchResult(limitResponse);
 
-          if (limitResponse.length === 0) {
-            const message: string = "No universities found!";
-            setSearchError(message);
-            alert(message);
-          }
-        });
+        if (limitResponse.length === 0) {
+          const message: string = "No universities found!";
+          setSearchError(message);
+          alert(message);
+        }
       } catch (error: any) {
+        setSearchResult(undefined);
         setSearchError("Some Network Error");
         alert(searchError);
       } finally {
@@ -61,7 +60,7 @@ function Lesson10() {
         // setCountryNameToRender(countryName);
       }
     } else {
-      setSearchResult([]);
+      setSearchResult(undefined);
       setSearchError("Country name could not be empty");
       setIsDisabled(false);
     }
@@ -84,7 +83,7 @@ function Lesson10() {
       <Lesson_10Header>
         <TitelDiv>
           <Title>Top universities of</Title>
-          <BlancP>{searchResult && <Title>{countryName}</Title>}</BlancP>
+          <BlancP>{!!searchResult && <Title>{countryName}</Title>}</BlancP>
         </TitelDiv>
         <SearchForm
           value={countryName}

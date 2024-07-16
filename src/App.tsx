@@ -22,8 +22,8 @@ function App() {
       {/* <Lesson07 /> */}
       {/* <Lesson08 /> */}
       {/* <Lesson09 /> */}
-      {/* <Lesson10 /> */}
-      <Lesson11 />
+      <Lesson10 />
+      {/* <Lesson11 /> */}
       {/* <Homework06 /> */}
       {/* <Homework07 /> */}
       {/* <Homework08 /> */}

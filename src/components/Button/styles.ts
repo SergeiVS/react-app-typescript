@@ -15,7 +15,7 @@ const getButtonColor = ($isRed: boolean | undefined) => {
 
 export const SyledButton = styled("button")<StyledButtonProps>`
   width: 100%;
-  height: 70px;
+  height: 100%;
   outline: none;
   border-radius: 4px;
   border: 1px solid grey;
