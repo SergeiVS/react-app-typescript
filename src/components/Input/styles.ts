@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
-import {colors} from "styles/colors"
-
+import { colors } from "styles/colors";
 
 interface StyledInputProps {
   $error: undefined | string;
@@ -19,13 +18,14 @@ export const InputWrapper = styled("div")`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 4px;
+  gap: 15px;
+  
 `;
 
 export const InputLabel = styled("label")`
-  font-size: 16px;
+  font-size: 26px;
   font-weight: 400;
-  color: rgb(111, 111, 111);
+  color: black;
 `;
 
 export const InputElemnt = styled("input")<StyledInputProps>`
@@ -49,4 +49,8 @@ export const InputElemnt = styled("input")<StyledInputProps>`
     }
     background-color: gray;
   }
+`;
+
+export const ErrorContainer = styled.div`
+  color: ${colors.ERROR};
 `;

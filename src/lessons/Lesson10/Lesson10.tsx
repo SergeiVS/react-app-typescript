@@ -1,21 +1,103 @@
-import { Lesson_10Wrapper } from "./styles";
+import { ChangeEvent, FormEvent, ReactNode, useState } from "react";
+import axios from "axios";
+import { v4 } from "uuid";
 
-// 1. Разместите на странице Input с label="Country", в который пользователь может ввести название страны
-// 2. Разместите на странице Button "Get Universities", по клику на которую, отправляется GET запрос на http://universities.hipolabs.com/search?country=COUNTRY
-// 3. Используйте для запросов axios
-// 4. Если в ответе на запрос пришли нормальные данные(запрос выполнен успешно), то разместите данные в стейте, а затем отобразите на стрнице в виде каточек
-// Сохраняйте не более 15 обьектов в массиве
-// 5. При повторном нажатии на кнопку, выполните новый GET запрос на http://universities.hipolabs.com/search?country=COUNTRY и  получите новые данные, и обновите стейт
-// 6. При получении ошибки, положите в отдельные стейт данные об ошибке с соббщением "Some Network Error"
-// 7. Стили на ваше усмотрение, контент тоже на ваше усмотрение
-// 8. Все нужно делать в компоненте Lesson_10
+import UniCard from "components/UniCard/UniCard";
+import SearchForm from "components/SearchForm/SearchForm";
 
-// {"country": "Poland", "name": "Zachodniopomorska School of Science and Engineering", "alpha_two_code": "PL", 
-// "state-province": null, "domains": ["zut.edu.pl"], "web_pages": ["http://www.zut.edu.pl/"]
-
+import {
+  Lesson_10Div,
+  Lesson_10Header,
+  Lesson_10Cards,
+  Title,
+  StyledError,
+  TitelDiv,
+  BlancP,
+} from "./styles";
+import { MAX_UNIVERSITIES, Universities, University } from "./types";
 
 function Lesson10() {
-  return <Lesson_10Wrapper>Lesson10</Lesson_10Wrapper>;
+  const [countryName, setCountry] = useState<string | undefined>("");
+  const [searchResult, setSearchResult] = useState<Universities | undefined>(
+    undefined
+  );
+  const [searchError, setSearchError] = useState<string | undefined>(undefined);
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
+
+  const searchUrl: string = `http://universities.hipolabs.com/search?country=${countryName}`;
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCountry(event.target.value);
+  };
+
+  const getRequestResults = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSearchError(undefined);
+    setSearchResult(undefined);
+    setIsDisabled(true);
+
+    if (countryName) {
+      try {
+        const response = await axios.get<Universities>(searchUrl);
+        const limitResponse: Universities = response.data.slice(
+          0,
+          MAX_UNIVERSITIES
+        );
+
+        setSearchResult(limitResponse);
+
+        if (limitResponse.length === 0) {
+          const message: string = "No universities found!";
+          setSearchError(message);
+          alert(message);
+        }
+      } catch (error: any) {
+        setSearchResult(undefined);
+        setSearchError("Some Network Error");
+        alert(searchError);
+      } finally {
+        setIsDisabled(false);
+        // setCountryNameToRender(countryName);
+      }
+    } else {
+      setSearchResult(undefined);
+      setSearchError("Country name could not be empty");
+      setIsDisabled(false);
+    }
+  };
+
+  const uniCardsToRender = (): ReactNode[] | undefined => {
+    return searchResult?.map((uniObject: University): ReactNode => {
+      return (
+        <UniCard
+          key={v4()}
+          name={uniObject.name}
+          webSite={uniObject.web_pages[0]}
+        />
+      );
+    });
+  };
+
+  return (
+    <Lesson_10Div>
+      <Lesson_10Header>
+        <TitelDiv>
+          <Title>Top universities of</Title>
+          <BlancP>{!!searchResult && <Title>{countryName}</Title>}</BlancP>
+        </TitelDiv>
+        <SearchForm
+          value={countryName}
+          onChange={handleChange}
+          onSubmit={getRequestResults}
+          disabled={isDisabled}
+        />
+      </Lesson_10Header>
+      <Lesson_10Cards>
+        {!!searchResult && uniCardsToRender()}
+        {!!searchError && <StyledError>{searchError}</StyledError>}
+      </Lesson_10Cards>
+    </Lesson_10Div>
+  );
 }
 
 export default Lesson10;

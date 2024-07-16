@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors } from "styles/colors";
 
 interface StyledButtonProps {
   $isRed: boolean;
@@ -8,20 +9,20 @@ const getButtonColor = ($isRed: boolean | undefined) => {
   if ($isRed) {
     return "red";
   } else {
-    return "rgba(31, 39, 245, 1)";
+    return colors.PRIMARY_BLUE;
   }
 };
 
 export const SyledButton = styled("button")<StyledButtonProps>`
   width: 100%;
-  height: 70px;
+  height: 100%;
   outline: none;
   border-radius: 4px;
+  border: 1px solid grey;
   font-size: 20px;
   font-weight: 600;
   background-color: ${({ $isRed }) => getButtonColor($isRed)};
   color: rgba(255, 255, 255, 1);
-  outline: none;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
