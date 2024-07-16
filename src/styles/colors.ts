@@ -5,6 +5,7 @@ export interface COLORS {
   PLACEHOLDER: string;
   LABEL: string;
   DISABLED: string;
+  OCEAN_GREEN: string;
 }
 
 export const colors: COLORS = {
@@ -14,4 +15,5 @@ export const colors: COLORS = {
   PLACEHOLDER: "#6f6f6f",
   LABEL: "#615c5c",
   DISABLED: "#3f3f3f",
+  OCEAN_GREEN: "#639FAB",
 };

@@ -3,8 +3,15 @@ import Input from "components/Input/Input";
 
 import { SearchFormProps } from "./types";
 import { SearchFormContainer, ButtonControl, InputControl } from "./styles";
+import { colors } from "styles/colors";
 
-function SearchForm({ value, onSubmit, onChange, disabled }: SearchFormProps) {
+function SearchForm({
+  value,
+  onSubmit,
+  onChange,
+  disabled,
+  color,
+}: SearchFormProps) {
   return (
     <SearchFormContainer onSubmit={onSubmit}>
       <InputControl>
@@ -19,7 +26,12 @@ function SearchForm({ value, onSubmit, onChange, disabled }: SearchFormProps) {
         />
       </InputControl>
       <ButtonControl>
-        <Button name={"Get Universities"} type="submit" disabled={disabled} />
+        <Button
+          name={"Get Universities"}
+          type="submit"
+          disabled={disabled}
+          color={colors.OCEAN_GREEN}
+        />
       </ButtonControl>
     </SearchFormContainer>
   );
