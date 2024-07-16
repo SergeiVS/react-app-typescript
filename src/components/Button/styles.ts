@@ -7,9 +7,9 @@ interface StyledButtonProps {
 
 const getButtonColor = ($isRed: boolean | undefined) => {
   if ($isRed) {
-    return "red";
+    return colors.ERROR;
   } else {
-    return colors.PRIMARY_BLUE
+    return colors.PRIMARY_BLUE;
   }
 };
 

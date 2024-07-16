@@ -1,8 +1,7 @@
 import ContactUsForm from "components/ContactUsForm/ContactUsForm";
-
 import { PageWrapper } from "./styles";
 
-function Homework11() {
+function ContactUs() {
   return (
     <PageWrapper>
       <ContactUsForm />
@@ -10,4 +9,4 @@ function Homework11() {
   );
 }
 
-export default Homework11;
+export default ContactUs;

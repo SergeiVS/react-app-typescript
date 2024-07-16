@@ -7,7 +7,7 @@ import Input from "components/Input/Input";
 import { ContactForm, FormTitle, ButtonContainer } from "./styles";
 import { CONTACT_US_FORM_NAMES } from "./types";
 
-function ContactUs() {
+function ContactUsForm() {
   const validationSchema = Yup.object().shape({
     [CONTACT_US_FORM_NAMES.FULLNAME]: Yup.string()
       .required("This field is required")
@@ -18,8 +18,9 @@ function ContactUs() {
       .required("This field is required")
       .min(4, "Pone number has to contain at least 4 sympols")
       .max(20, "Phone nummber has to contain max 20 sympols"),
+
     [CONTACT_US_FORM_NAMES.EMAIL]: Yup.string()
-      .email("Inputed data have to be in email format")
+      .email("Inputed data has to be in email format")
       .min(6, "Email has to contain at least 6 sympols")
       .max(60, "Email has to contain max 60 sympols"),
   });
@@ -34,7 +35,7 @@ function ContactUs() {
     validationSchema: validationSchema,
     validateOnChange: false,
 
-    onSubmit: (values, helpers) => {
+    onSubmit: (values) => {
       console.log(values);
     },
   });
@@ -79,4 +80,4 @@ function ContactUs() {
   );
 }
 
-export default ContactUs;
+export default ContactUsForm;

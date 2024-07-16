@@ -1,0 +1,29 @@
+import { useNavigate } from "react-router-dom";
+
+import Button from "components/Button/Button";
+
+import { PageWrapper, ButtonControl } from "./styles";
+
+function About() {
+  const navigate = useNavigate();
+  const goToHomePage = () => {
+    navigate("/");
+  };
+
+  const goBack = () => {
+    navigate(-1);
+  };
+  return (
+    <PageWrapper>
+      Information about company{" "}
+      <ButtonControl>
+        <Button name="Go to home page" onClick={goToHomePage} />
+      </ButtonControl>
+      <ButtonControl>
+        <Button name="Go Back" onClick={goBack} />
+      </ButtonControl>
+    </PageWrapper>
+  );
+}
+
+export default About;

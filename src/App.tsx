@@ -1,4 +1,12 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import GlobalStyles from "styles/GlobalStyles";
+
+import Layout from "components/Layout/Layout";
+import Home from "pages/EmployeeApp/Home/Home";
+import About from "pages/EmployeeApp/About/About";
+import Login from "pages/EmployeeApp/Login/Login";
+import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
 
 // import Lesson06 from "lessons/Lesson06/Lesson06";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
@@ -17,8 +25,19 @@ import Consultation03 from "consultations/Consultation03/Consultation03";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyles />
+
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="*" element="Page not found" />
+        </Routes>
+      </Layout>
+
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
       {/* <Lesson08 /> */}
@@ -29,9 +48,9 @@ function App() {
       {/* <Homework07 /> */}
       {/* <Homework08 /> */}
       {/*<Homework09 />*/}
-      <Homework11 />
+      {/* <Homework11 /> */}
       {/* <Consultation03 /> */}
-    </>
+    </BrowserRouter>
   );
 }
 
