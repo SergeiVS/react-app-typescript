@@ -9,5 +9,5 @@ export interface ButtonProps {
   onClick?: (event: MouseEvent) => void;
   disabled?: boolean;
   isRed?: boolean;
-
+  backgroundColor?: string;
 }

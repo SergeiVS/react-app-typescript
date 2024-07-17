@@ -5,6 +5,7 @@ import { StyledLoginForm } from "./styles";
 import { StyledFormTitle } from "./styles";
 import { InputsFieldsWrapper } from "./styles";
 import { LOGIN_FORM_NAMES } from "./types";
+import { colors } from "styles/colors";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -60,7 +61,12 @@ function LoginForm() {
           error={formik.errors[LOGIN_FORM_NAMES.PASSWORD]}
         />
       </InputsFieldsWrapper>
-      <Button disabled={formik.isSubmitting} name="Login" type="submit" />
+      <Button
+        disabled={formik.isSubmitting}
+        name="Login"
+        type="submit"
+        backgroundColor={colors.PRIMARY_BLUE}
+      />
     </StyledLoginForm>
   );
 }

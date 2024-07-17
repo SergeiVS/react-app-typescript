@@ -9,6 +9,7 @@ function Button({
   imgSrc,
   disabled = false,
   isRed = false,
+  backgroundColor = colors.PRIMARY_BLUE,
 }: ButtonProps) {
   return (
     <SyledButton
@@ -16,9 +17,10 @@ function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
+      $backgroundColor={backgroundColor}
     >
-      {imgSrc && <ButtonImage src={imgSrc} alt="icon" />}
-      {!imgSrc && name}
+      {!!imgSrc && <ButtonImage src={imgSrc} alt="icon" />}
+      {!!imgSrc && name}
     </SyledButton>
   );
 }
