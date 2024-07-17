@@ -35,10 +35,42 @@ function Layout({ children }: LayoutProps) {
           >
             Home
           </Link>
-          <Link to="/contactUs">Contact Us</Link>
-          <Link to="/about">About</Link>
-          <Link to="/login">Log In</Link>
-          <Link to="/clients">Clients</Link>
+          <Link
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/contactUs"
+          >
+            Contact Us
+          </Link>
+          <Link
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/about"
+          >
+            About
+          </Link>
+          <Link
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/login"
+          >
+            Log In
+          </Link>
+          <Link
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/clients"
+          >
+            Clients
+          </Link>
         </NavigationContainer>
       </Header>
       <Main>{children}</Main>
