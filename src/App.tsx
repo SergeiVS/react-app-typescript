@@ -18,6 +18,7 @@ import Lesson08 from "lessons/Lesson08/Lesson08";
 import Lesson09 from "lessons/Lesson09/Lesson09";
 import Lesson10 from "lessons/Lesson10/Lesson10";
 import Lesson11 from "lessons/Lesson11/Lesson11";
+import Lesson13 from "lessons/Lesson13/Lesson13";
 
 // import Homework06 from "homeworks/Homework06/Homework06";
 import Homework07 from "homeworks/Homework07/Homework07";
@@ -39,9 +40,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/clients" element={<Clients />} />
-          <Route path="/apple" element={<Apple />} />
-          <Route path="/google" element={<Google />} />
-          <Route path="/oracle" element={<Oracle />} />
+          <Route path="/clients/apple" element={<Apple />} />
+          <Route path="/clients/google" element={<Google />} />
+          <Route path="/clients/oracle" element={<Oracle />} />
 
           <Route path="*" element="Page not found" />
         </Routes>
@@ -53,6 +54,7 @@ function App() {
       {/* <Lesson09 /> */}
       {/* <Lesson10 /> */}
       {/* <Lesson11 /> */}
+      {/* <Lesson13 /> */}
       {/* <Homework06 /> */}
       {/* <Homework07 /> */}
       {/* <Homework08 /> */}

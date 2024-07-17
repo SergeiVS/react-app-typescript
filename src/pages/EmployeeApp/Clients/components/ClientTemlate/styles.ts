@@ -24,6 +24,6 @@ export const ClientInfo = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  height: 50px;
+  height: 70px;
   width: 200px;
 `;

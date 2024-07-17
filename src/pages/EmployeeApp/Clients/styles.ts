@@ -16,12 +16,10 @@ export const Title = styled.p`
   font-size: 30px;
 `;
 
-export const LinkButton = styled.nav`
+export const ClientsLinks = styled.nav`
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 25px;
-  width: 200px;
 `;
 
 export const Link = styled(NavLink)`

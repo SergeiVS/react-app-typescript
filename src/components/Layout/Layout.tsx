@@ -40,6 +40,15 @@ function Layout({ children }: LayoutProps) {
               fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
+            to="/clients"
+          >
+            Clients
+          </Link>
+          <Link
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
             to="/contactUs"
           >
             Contact Us
@@ -62,15 +71,6 @@ function Layout({ children }: LayoutProps) {
           >
             Log In
           </Link>
-          <Link
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bold" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/clients"
-          >
-            Clients
-          </Link>
         </NavigationContainer>
       </Header>
       <Main>{children}</Main>
@@ -83,10 +83,10 @@ function Layout({ children }: LayoutProps) {
         </FooterLogo>
         <FooterNavigation>
           <FooterLink to="/">Home</FooterLink>
+          <FooterLink to="clients">Clients</FooterLink>
           <FooterLink to="/contactUs">Contact Us</FooterLink>
           <FooterLink to="/about">About</FooterLink>
           <FooterLink to="/login">Log In</FooterLink>
-          <FooterLink to="clients">Clients</FooterLink>
         </FooterNavigation>
       </Footer>
     </LayoutWrapper>
