@@ -18,10 +18,12 @@ function Layout({ children }: LayoutProps) {
     <LayoutWrapper>
       <Header>
         <Logo>
-          <LogoImg
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxOGDYH2tzlcwZSDpjg0qRGgEHAxVhsKHFUg&s"
-            alt="App logo"
-          />
+          <Link to="/">
+            <LogoImg
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxOGDYH2tzlcwZSDpjg0qRGgEHAxVhsKHFUg&s"
+              alt="App logo"
+            />
+          </Link>
         </Logo>
         <NavigationContainer>
           <Link
@@ -36,6 +38,7 @@ function Layout({ children }: LayoutProps) {
           <Link to="/contactUs">Contact Us</Link>
           <Link to="/about">About</Link>
           <Link to="/login">Log In</Link>
+          <Link to="/clients">Clients</Link>
         </NavigationContainer>
       </Header>
       <Main>{children}</Main>
@@ -51,6 +54,7 @@ function Layout({ children }: LayoutProps) {
           <FooterLink to="/contactUs">Contact Us</FooterLink>
           <FooterLink to="/about">About</FooterLink>
           <FooterLink to="/login">Log In</FooterLink>
+          <FooterLink to="clients">Clients</FooterLink>
         </FooterNavigation>
       </Footer>
     </LayoutWrapper>

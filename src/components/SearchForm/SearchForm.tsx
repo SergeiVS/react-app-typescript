@@ -26,7 +26,12 @@ function SearchForm({
         />
       </InputControl>
       <ButtonControl>
-        <Button name={"Get Universities"} type="submit" disabled={disabled} />
+        <Button
+          name={"Get Universities"}
+          type="submit"
+          disabled={disabled}
+          backgroundColor={colors.OCEAN_GREEN}
+        />
       </ButtonControl>
     </SearchFormContainer>
   );

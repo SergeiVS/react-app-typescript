@@ -65,7 +65,6 @@ function LoginForm() {
         disabled={formik.isSubmitting}
         name="Login"
         type="submit"
-        backgroundColor={colors.PRIMARY_BLUE}
       />
     </StyledLoginForm>
   );

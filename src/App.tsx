@@ -7,6 +7,10 @@ import Home from "pages/EmployeeApp/Home/Home";
 import About from "pages/EmployeeApp/About/About";
 import Login from "pages/EmployeeApp/Login/Login";
 import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
+import Clients from "pages/EmployeeApp/Clients/Clients";
+import Apple from "pages/EmployeeApp/Clients/Apple/Apple";
+import Google from "pages/EmployeeApp/Clients/Google/Google";
+import Oracle from "pages/EmployeeApp/Clients/Oracle/Oracle";
 
 // import Lesson06 from "lessons/Lesson06/Lesson06";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
@@ -34,6 +38,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/apple" element={<Apple />} />
+          <Route path="/google" element={<Google />} />
+          <Route path="/oracle" element={<Oracle />} />
+
           <Route path="*" element="Page not found" />
         </Routes>
       </Layout>
