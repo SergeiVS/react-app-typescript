@@ -23,7 +23,7 @@ export const InputWrapper = styled("div")`
 `;
 
 export const InputLabel = styled("label")`
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 400;
   color: black;
 `;
