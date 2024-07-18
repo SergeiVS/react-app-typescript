@@ -6,6 +6,7 @@ import Input from "components/Input/Input";
 
 import { ContactForm, FormTitle, ButtonContainer } from "./styles";
 import { CONTACT_US_FORM_NAMES } from "./types";
+import { colors } from "styles/colors";
 
 function ContactUsForm() {
   const validationSchema = Yup.object().shape({
@@ -74,6 +75,7 @@ function ContactUsForm() {
           disabled={formik.isSubmitting}
           type="submit"
           name="SEND REQUEST"
+          fontColor={colors.IVORY}
         />
       </ButtonContainer>
     </ContactForm>

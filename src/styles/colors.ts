@@ -6,6 +6,7 @@ export interface COLORS {
   LABEL: string;
   DISABLED: string;
   OCEAN_GREEN: string;
+  IVORY: string;
 }
 
 export const colors: COLORS = {
@@ -16,4 +17,5 @@ export const colors: COLORS = {
   LABEL: "#615c5c",
   DISABLED: "#3f3f3f",
   OCEAN_GREEN: "#639FAB",
+  IVORY: "#f5f6e8",
 };
