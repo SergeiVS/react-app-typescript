@@ -5,7 +5,6 @@ import { StyledLoginForm } from "./styles";
 import { StyledFormTitle } from "./styles";
 import { InputsFieldsWrapper } from "./styles";
 import { LOGIN_FORM_NAMES } from "./types";
-import { colors } from "styles/colors";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";

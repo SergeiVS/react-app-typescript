@@ -1,7 +1,8 @@
-import { ContentInfo, ContentTitle, ContentWrapper } from "./styles";
+
 import { useContext } from "react";
 import { MainContext } from "lessons/Lesson13/components/Main/Main";
 import { UserData } from "lessons/Lesson13/components/Main/types";
+import { ContentInfo, ContentTitle, ContentWrapper } from "./styles";
 
 function Content() {
   const userData = useContext<UserData | undefined>(MainContext);

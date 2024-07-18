@@ -1,6 +1,8 @@
-import Section from "lessons/Lesson13/components/Section/Section";
 import { useState, createContext } from "react";
+
 import Button from "components/Button/Button";
+import Section from "lessons/Lesson13/components/Section/Section";
+
 import { UserData } from "./types";
 import { MainTitle, MainWrapper, ButtonContainer } from "./styles";
 
