@@ -34,10 +34,12 @@ export const InputElemnt = styled("input")<StyledInputProps>`
   height: 100%;
   font-size: 16px;
   background-color: white;
+  word-wrap: normal;
   border: 1px solid;
   border-color: ${({ $error }) => setBorderColor($error)};
   border-radius: 4px;
   padding: 12px;
+  overflow: auto;
   &::placeholder {
     color: ${colors.PLACEHOLDER};
     font-size: 16px;

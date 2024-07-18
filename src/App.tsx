@@ -33,8 +33,8 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-
-      {/* <Layout>
+{/* 
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -59,7 +59,7 @@ function App() {
       {/* <Homework06 /> */}
       {/* <Homework07 /> */}
       {/* <Homework08 /> */}
-      {/*<Homework09 />*/}
+      {/* <Homework09 /> */}
       {/* <Homework11 /> */}
       <Homework13 />
       {/* <Consultation03 /> */}

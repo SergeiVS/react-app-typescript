@@ -21,12 +21,6 @@ export const MessageSendForm = styled.form`
   padding: 20px;
 `;
 
-export const InputContainer = styled.div`
-  width: 100%;
-  height: 250px;
-  padding: 20px 0px;
-`;
-
 export const ButtonContainer = styled.div`
   height: 70px;
   width: 250px;

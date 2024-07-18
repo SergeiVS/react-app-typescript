@@ -1,16 +1,11 @@
-import { useState, ChangeEvent, createContext } from "react";
+import { useState, createContext } from "react";
 import { useFormik } from "formik";
 
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import Card from "homeworks/homework13/components/Card/Card";
 
-import {
-  BlogManWrapper,
-  MessageSendForm,
-  InputContainer,
-  ButtonContainer,
-} from "./styles";
+import { BlogManWrapper, MessageSendForm, ButtonContainer } from "./styles";
 
 export const MainContext = createContext<string | undefined>("");
 
@@ -19,32 +14,29 @@ function BlogManagement() {
 
   const formik = useFormik({
     initialValues: {
-      "messageToSend": "",
+      messageInput: "",
     },
 
     onSubmit: (values) => {
-      setInputtext(values.messageToSend);
+      setInputtext(values.messageInput);
     },
   });
-
-  console.log(inputText);
 
   return (
     <MainContext.Provider value={inputText}>
       <BlogManWrapper>
         <MessageSendForm onSubmit={formik.handleSubmit}>
-          <InputContainer>
-            <Input
-              id="message-input"
-              name="messageToSend"
-              label="Your message:"
-              value={inputText}
-              placeholder="Type your message"
-              onChange={formik.handleChange}
-            />
-          </InputContainer>
+          <Input
+            name="messageInput"
+            type="textarea"
+            label="Your message"
+            id="message-input"
+            placeholder="Type your message"
+            value={formik.values.messageInput}
+            onChange={formik.handleChange}
+          />
           <ButtonContainer>
-            <Button name="SEND MESSAGE" />
+            <Button name="SEND MESSAGE" type="submit" />
           </ButtonContainer>
         </MessageSendForm>
         <Card />
