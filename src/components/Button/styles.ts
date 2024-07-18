@@ -4,7 +4,7 @@ import { colors } from "styles/colors";
 interface StyledButtonProps {
   $backgroundColor: string;
   $isRed: boolean;
-  $color: string;
+  $fontColor: string;
 }
 
 const getButtonColor = (
@@ -22,17 +22,15 @@ export const SyledButton = styled("button")<StyledButtonProps>`
   border: 1px solid grey;
   font-size: 20px;
   font-weight: 600;
+  color: $fontColor;
   background-color: ${({ $isRed, $backgroundColor }) =>
     getButtonColor($isRed, $backgroundColor)};
-  color: $color;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
     background-color: gray;
   }
 `;
-
-
 
 export const ButtonImage = styled("img")`
   height: 50px;
