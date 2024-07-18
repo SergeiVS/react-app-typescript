@@ -25,6 +25,7 @@ import Homework07 from "homeworks/Homework07/Homework07";
 import Homework08 from "homeworks/Homework08/Homework08";
 import Homework09 from "homeworks/Homework09/Homework09";
 import Homework11 from "homeworks/Homework11/Homework11";
+import Homework13 from "homeworks/homework13/Homework13";
 
 import Consultation03 from "consultations/Consultation03/Consultation03";
 
@@ -33,7 +34,7 @@ function App() {
     <BrowserRouter>
       <GlobalStyles />
 
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -46,7 +47,7 @@ function App() {
 
           <Route path="*" element="Page not found" />
         </Routes>
-      </Layout>
+      </Layout> */}
 
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
@@ -60,6 +61,7 @@ function App() {
       {/* <Homework08 /> */}
       {/*<Homework09 />*/}
       {/* <Homework11 /> */}
+      <Homework13 />
       {/* <Consultation03 /> */}
     </BrowserRouter>
   );
