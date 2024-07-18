@@ -12,8 +12,51 @@ import {
   FooterLink,
 } from "./styles";
 import { LayoutProps } from "./types";
+import { APP_ROUTES } from "constants/routes";
+import { v4 } from "uuid";
+
+interface LinksRoutesInterface {
+  [APP_ROUTES.HOME]: string;
+  [APP_ROUTES.CLIENTS]: string;
+  [APP_ROUTES.COUNTACT_US]: string;
+  [APP_ROUTES.ABOUT]: string;
+  [APP_ROUTES.LOGIN]: string;
+}
 
 function Layout({ children }: LayoutProps) {
+  const linksRoutes = {
+    [APP_ROUTES.HOME]: "Home",
+    [APP_ROUTES.CLIENTS]: "Clients",
+    [APP_ROUTES.COUNTACT_US]: "Contact Us",
+    [APP_ROUTES.ABOUT]: "About",
+    [APP_ROUTES.LOGIN]: "Login",
+  };
+
+  console.log(Object.keys(linksRoutes));
+
+  const headerLinks = Object.keys(linksRoutes).map((appRoute: string) => {
+    return (
+      <Link
+        key={v4()}
+        style={({ isActive }) => ({
+          fontWeight: isActive ? "bold" : "normal",
+          textDecoration: isActive ? "underline" : "none",
+        })}
+        to={appRoute}
+      >
+        {linksRoutes[appRoute as keyof typeof linksRoutes]}
+      </Link>
+    );
+  });
+
+  const footerLinks = Object.keys(linksRoutes).map((appRoute: string) => {
+    return (
+      <FooterLink key={v4()} to={appRoute}>
+        {linksRoutes[appRoute as keyof typeof linksRoutes]}
+      </FooterLink>
+    );
+  });
+
   return (
     <LayoutWrapper>
       <Header>
@@ -25,53 +68,7 @@ function Layout({ children }: LayoutProps) {
             />
           </Link>
         </Logo>
-        <NavigationContainer>
-          <Link
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bold" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/"
-          >
-            Home
-          </Link>
-          <Link
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bold" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/clients"
-          >
-            Clients
-          </Link>
-          <Link
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bold" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/contactUs"
-          >
-            Contact Us
-          </Link>
-          <Link
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bold" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/about"
-          >
-            About
-          </Link>
-          <Link
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bold" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/login"
-          >
-            Log In
-          </Link>
-        </NavigationContainer>
+        <NavigationContainer>{headerLinks}</NavigationContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
@@ -81,13 +78,7 @@ function Layout({ children }: LayoutProps) {
             alt="App logo"
           />
         </FooterLogo>
-        <FooterNavigation>
-          <FooterLink to="/">Home</FooterLink>
-          <FooterLink to="clients">Clients</FooterLink>
-          <FooterLink to="/contactUs">Contact Us</FooterLink>
-          <FooterLink to="/about">About</FooterLink>
-          <FooterLink to="/login">Log In</FooterLink>
-        </FooterNavigation>
+        <FooterNavigation>{footerLinks}</FooterNavigation>
       </Footer>
     </LayoutWrapper>
   );
