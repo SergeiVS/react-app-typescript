@@ -16,7 +16,8 @@ import {
 export const MainContext = createContext<string | undefined>("");
 
 function BlogManagement() {
-  const [inputText, setInputtext] = useState<string | undefined>("");
+  let isSubmitted: boolean = false;
+  const [inputText, setInputText] = useState<string | undefined>("");
 
   const formik = useFormik({
     initialValues: {
@@ -24,9 +25,12 @@ function BlogManagement() {
     },
 
     onSubmit: (values) => {
-      setInputtext(values.messageInput);
+      setInputText(values.messageInput);
+      console.log(formik);
     },
   });
+
+  console.log(formik);
 
   const buttonDisable = (): boolean => {
     return formik.dirty ? false : true;
@@ -53,7 +57,7 @@ function BlogManagement() {
             />
           </ButtonContainer>
         </MessageSendForm>
-        <Card />
+        {formik.isSubmitting && <Card />}
       </BlogManWrapper>
     </MainContext.Provider>
   );
