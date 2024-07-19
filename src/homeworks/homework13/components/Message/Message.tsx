@@ -4,7 +4,7 @@ import { BlogManagmentContext } from "homeworks/homework13/components/BlogManage
 import { MessageWrapper, StyledMessage, MessageTitle } from "./styles";
 
 function Message() {
-  const messageText = useContext<string | undefined>(BlogManagmentContext);
+  const messageText = useContext<string>(BlogManagmentContext);
   return (
     <MessageWrapper>
       <MessageTitle>Message:</MessageTitle>

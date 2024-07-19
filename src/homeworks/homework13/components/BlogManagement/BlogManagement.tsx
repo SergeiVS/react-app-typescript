@@ -13,10 +13,10 @@ import {
   MessageContainer,
 } from "./styles";
 
-export const BlogManagmentContext = createContext<string | undefined>("");
+export const BlogManagmentContext = createContext<string>("");
 
 function BlogManagement() {
-  const [inputText, setInputText] = useState<string | undefined>("");
+  const [inputText, setInputText] = useState<string>("");
 
   const formik = useFormik({
     initialValues: {
