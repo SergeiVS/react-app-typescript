@@ -27,4 +27,6 @@ export const InputsFieldsWrapper = styled("div")`
   width: 100%;
 `;
 
-
+export const ButtonContainer = styled.div`
+  min-height: 70px;
+`;
