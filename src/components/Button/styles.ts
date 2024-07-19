@@ -22,7 +22,7 @@ export const SyledButton = styled("button")<StyledButtonProps>`
   border: 1px solid grey;
   font-size: 20px;
   font-weight: 600;
-  color: $fontColor;
+  color: ${({ $fontColor }) => $fontColor};
   background-color: ${({ $isRed, $backgroundColor }) =>
     getButtonColor($isRed, $backgroundColor)};
   cursor: pointer;

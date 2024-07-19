@@ -29,17 +29,17 @@ export const InputLabel = styled("label")`
 `;
 
 export const InputElemnt = styled("input")<StyledInputProps>`
+ 
   outline: none;
   width: 100%;
   height: 100%;
   font-size: 16px;
   background-color: white;
-  word-wrap: normal;
   border: 1px solid;
   border-color: ${({ $error }) => setBorderColor($error)};
   border-radius: 4px;
   padding: 12px;
-  overflow: auto;
+  overflow-wrap: wrap;
   &::placeholder {
     color: ${colors.PLACEHOLDER};
     font-size: 16px;
