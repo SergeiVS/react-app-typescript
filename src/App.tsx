@@ -11,6 +11,7 @@ import Clients from "pages/EmployeeApp/Clients/Clients";
 import Apple from "pages/EmployeeApp/Clients/Apple/Apple";
 import Google from "pages/EmployeeApp/Clients/Google/Google";
 import Oracle from "pages/EmployeeApp/Clients/Oracle/Oracle";
+import {APP_ROUTES} from "constants/routes"
 
 // import Lesson06 from "lessons/Lesson06/Lesson06";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
@@ -36,19 +37,19 @@ function App() {
 {/* 
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/clients/apple" element={<Apple />} />
-          <Route path="/clients/google" element={<Google />} />
-          <Route path="/clients/oracle" element={<Oracle />} />
+          <Route path={APP_ROUTES.HOME} element={<Home />} />
+          <Route path={APP_ROUTES.ABOUT} element={<About />} />
+          <Route path={APP_ROUTES.LOGIN} element={<Login />} />
+          <Route path={APP_ROUTES.COUNTACT_US} element={<ContactUs />} />
+          <Route path={APP_ROUTES.CLIENTS} element={<Clients />} />
+          <Route path={APP_ROUTES.APPLE} element={<Apple />} />
+          <Route path={APP_ROUTES.GOOGLE} element={<Google />} />
+          <Route path={APP_ROUTES.ORACLE} element={<Oracle />} />
 
           <Route path="*" element="Page not found" />
         </Routes>
-      </Layout> */}
 
+      </Layout> */}
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
       {/* <Lesson08 /> */}
