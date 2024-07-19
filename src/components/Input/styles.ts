@@ -18,8 +18,8 @@ export const InputWrapper = styled("div")`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   gap: 15px;
-  
 `;
 
 export const InputLabel = styled("label")`
@@ -29,17 +29,19 @@ export const InputLabel = styled("label")`
 `;
 
 export const InputElemnt = styled("input")<StyledInputProps>`
+ 
   outline: none;
   width: 100%;
-  height: 50px;
+  height: 100%;
   font-size: 16px;
   background-color: white;
   border: 1px solid;
   border-color: ${({ $error }) => setBorderColor($error)};
   border-radius: 4px;
   padding: 12px;
+  overflow-wrap: wrap;
   &::placeholder {
-    color: rgb 12 11 10;
+    color: ${colors.PLACEHOLDER};
     font-size: 16px;
   }
   &:disabled {
