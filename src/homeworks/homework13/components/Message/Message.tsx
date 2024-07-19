@@ -1,11 +1,16 @@
 import { useContext } from "react";
-import { MainContext } from "homeworks/homework13/components/BlogManagement/BlogManagement";
+import { BlogManagmentContext } from "homeworks/homework13/components/BlogManagement/BlogManagement";
 
-import { StyledMessage } from "./styles";
+import { MessageWrapper, StyledMessage, MessageTitle } from "./styles";
 
 function Message() {
-  const inputText = useContext<string | undefined>(MainContext);
-  return <StyledMessage>{inputText}</StyledMessage>;
+  const messageText = useContext<string | undefined>(BlogManagmentContext);
+  return (
+    <MessageWrapper>
+      <MessageTitle>Message:</MessageTitle>
+      <StyledMessage>{messageText}</StyledMessage>
+    </MessageWrapper>
+  );
 }
 
 export default Message;

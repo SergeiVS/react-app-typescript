@@ -1,7 +1,6 @@
 import { useState, createContext } from "react";
 import { useFormik } from "formik";
 
-import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import Card from "homeworks/homework13/components/Card/Card";
 
@@ -11,12 +10,12 @@ import {
   ButtonContainer,
   TextInput,
   FormTitle,
+  MessageContainer,
 } from "./styles";
 
-export const MainContext = createContext<string | undefined>("");
+export const BlogManagmentContext = createContext<string | undefined>("");
 
 function BlogManagement() {
-  let isSubmitted: boolean = false;
   const [inputText, setInputText] = useState<string | undefined>("");
 
   const formik = useFormik({
@@ -26,18 +25,15 @@ function BlogManagement() {
 
     onSubmit: (values) => {
       setInputText(values.messageInput);
-      console.log(formik);
     },
   });
-
-  console.log(formik);
 
   const buttonDisable = (): boolean => {
     return formik.dirty ? false : true;
   };
 
   return (
-    <MainContext.Provider value={inputText}>
+    <BlogManagmentContext.Provider value={inputText}>
       <BlogManWrapper>
         <MessageSendForm onSubmit={formik.handleSubmit}>
           <FormTitle>Type your message here:</FormTitle>
@@ -48,7 +44,6 @@ function BlogManagement() {
             onChange={formik.handleChange}
             value={formik.values.messageInput}
           ></TextInput>
-
           <ButtonContainer>
             <Button
               name="SEND MESSAGE"
@@ -57,9 +52,9 @@ function BlogManagement() {
             />
           </ButtonContainer>
         </MessageSendForm>
-        {formik.isSubmitting && <Card />}
+        <MessageContainer>{formik.isSubmitting && <Card />}</MessageContainer>
       </BlogManWrapper>
-    </MainContext.Provider>
+    </BlogManagmentContext.Provider>
   );
 }
 

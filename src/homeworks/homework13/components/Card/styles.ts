@@ -5,7 +5,11 @@ export const StyledCard = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 450px;
+  width: 100%;
+  height: fit-content;
+  background-color: wheat;
+  padding: 20px 0px;
+  border-radius: 8px;
 `;
 
 export const CardTitle = styled.p`

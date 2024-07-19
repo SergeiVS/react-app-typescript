@@ -18,7 +18,7 @@ export const MessageSendForm = styled.form`
   align-items: center;
   gap: 25px;
   width: 400px;
-  max-height: 400px;
+ height: 400px;
   padding: 20px;
 `;
 
@@ -31,8 +31,10 @@ export const FormTitle = styled.p`
 
 export const TextInput = styled.textarea`
   outline: none;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
   font-size: 16px;
   background-color: white;
   border: 1px solid;
@@ -43,15 +45,13 @@ export const TextInput = styled.textarea`
     color: ${colors.PLACEHOLDER};
     font-size: 16px;
   }
-  &:disabled {
-    cursor: not-allowed;
-    &::placeholder {
-      color: black;
-    }
-    background-color: gray;
-  }
 `;
 export const ButtonContainer = styled.div`
-  height: 70px;
+  min-height: 70px;
   width: 250px;
+`;
+
+export const MessageContainer = styled.div`
+  width: 450px;
+  max-height: fit-content;
 `;
