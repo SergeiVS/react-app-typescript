@@ -11,7 +11,7 @@ import Clients from "pages/EmployeeApp/Clients/Clients";
 import Apple from "pages/EmployeeApp/Clients/Apple/Apple";
 import Google from "pages/EmployeeApp/Clients/Google/Google";
 import Oracle from "pages/EmployeeApp/Clients/Oracle/Oracle";
-import {APP_ROUTES} from "constants/routes"
+import { APP_ROUTES } from "constants/routes";
 
 // import Lesson06 from "lessons/Lesson06/Lesson06";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
@@ -30,11 +30,16 @@ import Homework13 from "homeworks/homework13/Homework13";
 
 import Consultation03 from "consultations/Consultation03/Consultation03";
 
+import Layout_Team_1 from "pages/EmployeeAppProject/Layout_Team_1/Layout_Team_1";
+import CreateEmployee from "pages/EmployeeAppProject/CreateEmployee/CreateEmployee";
+import Employees from "pages/EmployeeAppProject/Employees/Employees";
+import { PagesPaths } from "pages/EmployeeAppProject/Layout_Team_1/types";
+
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-{/* 
+      {/* 
       <Layout>
         <Routes>
           <Route path={APP_ROUTES.HOME} element={<Home />} />
@@ -48,8 +53,20 @@ function App() {
 
           <Route path="*" element="Page not found" />
         </Routes>
-
       </Layout> */}
+
+      <Layout_Team_1>
+        <Routes>
+          <Route path={PagesPaths.HOME}></Route>
+          <Route
+            path={PagesPaths.CREATE_EMPLOYEES}
+            element={<CreateEmployee />}
+          />
+          <Route path={PagesPaths.EMPLOYEES} element={<Employees />} />
+          <Route path="*" element="Page not found" />
+        </Routes>
+      </Layout_Team_1>
+
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
       {/* <Lesson08 /> */}
@@ -62,7 +79,7 @@ function App() {
       {/* <Homework08 /> */}
       {/* <Homework09 /> */}
       {/* <Homework11 /> */}
-      <Homework13 />
+      {/* <Homework13 /> */}
       {/* <Consultation03 /> */}
     </BrowserRouter>
   );
