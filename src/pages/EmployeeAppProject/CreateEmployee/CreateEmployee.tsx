@@ -1,9 +1,28 @@
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useContext } from "react";
+
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 
 import { CreateEmployeeForm, ButtonContainer } from "./styles";
 
 function CreateEmployee() {
+  // const context = useContext(EmployeeAppContext);
+
+  const formik = useFormik({
+    initialValues: {
+      name: "John",
+      surName: "Johnson",
+      age: 25,
+      jobPosition: "QA",
+    },
+
+    onSubmit: (values) => {
+      
+    },
+  });
+
   return (
     <CreateEmployeeForm>
       <Input

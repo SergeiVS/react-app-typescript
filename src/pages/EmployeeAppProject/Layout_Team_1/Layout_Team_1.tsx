@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, createContext } from "react";
+import { EmployeeAppContextProvider } from "../contexts/employeeAppContext";
 
 import {
   LayoutWrapper,
@@ -11,31 +11,17 @@ import {
   NavigationContainer,
 } from "./styles";
 
-import { LayoutProps, Employee, PagesPaths } from "./types";
-
-export const EmployeeProjectContext = createContext<Employee>({
-  name: "",
-  surName: "",
-  age: 0,
-  jobPosition: "",
-});
+import { LayoutProps, PagesPaths, Employee } from "./types";
 
 function Layout_Team_1({ children }: LayoutProps) {
   const navigate = useNavigate();
-
-  const [employee, setEmployee] = useState<Employee>({
-    name: "",
-    surName: "",
-    age: 0,
-    jobPosition: "",
-  });
 
   const goToHomePage = () => {
     navigate(PagesPaths.HOME);
   };
 
   return (
-    <EmployeeProjectContext.Provider value={employee}>
+    <EmployeeAppContextProvider>
       <LayoutWrapper>
         <Header>
           <Logo onClick={goToHomePage}>
@@ -67,7 +53,7 @@ function Layout_Team_1({ children }: LayoutProps) {
         </Header>
         <Main>{children}</Main>
       </LayoutWrapper>
-    </EmployeeProjectContext.Provider>
+    </EmployeeAppContextProvider>
   );
 }
 

@@ -15,3 +15,5 @@ export enum PagesPaths {
   CREATE_EMPLOYEES = "/create",
   EMPLOYEES = "/employees",
 }
+
+

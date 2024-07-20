@@ -5,6 +5,8 @@ export const CreateEmployeeForm = styled.form`
   flex-direction: column;
   gap: 30px;
   padding: 60px;
+  width: 590px;
+  height: 590px;
   background-color: white;
   border-radius: 4px;
 `;
