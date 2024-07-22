@@ -1,16 +1,22 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 import { EmployeeAppContext } from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
 
-import { UserDataFormContainer, InputContainer } from "./styles";
+import {
+  UserDataFormContainer,
+  InputContainer,
+  ButtonContainer,
+} from "./styles";
 import { Employee } from "pages/EmployeeAppProject/Layout_Team_1/types";
+import Modal from "components/Modal/Modal";
 
 function CreateEmployeeForm() {
   const employeeDataContext = useContext(EmployeeAppContext);
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -41,18 +47,9 @@ function CreateEmployeeForm() {
     onSubmit: (values, helpers) => {
       employeeDataContext.setEmployee(values);
       helpers.resetForm();
+      setModalOpen(true);
     },
   });
-
-  const isDisabled = () => {
-    if (formik.dirty) {
-      return false;
-    } else if (formik.isSubmitting) {
-      return true;
-    } else {
-      return true;
-    }
-  };
 
   return (
     <UserDataFormContainer onSubmit={formik.handleSubmit}>
@@ -98,7 +95,16 @@ function CreateEmployeeForm() {
           error={formik.errors.jobPosition}
         />
       </InputContainer>
-      <Button disabled={isDisabled()} name="Create" type="submit" />
+      <ButtonContainer>
+        <Button
+          disabled={!formik.dirty || formik.isSubmitting}
+          name="Create"
+          type="submit"
+        />
+      </ButtonContainer>
+      <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
+        Employee is created
+      </Modal>
     </UserDataFormContainer>
   );
 }

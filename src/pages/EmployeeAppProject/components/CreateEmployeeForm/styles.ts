@@ -18,3 +18,6 @@ export const InputContainer = styled("div")`
   flex-direction: column;
   gap: 20px;
 `;
+export const ButtonContainer = styled("div")`
+height: 70px;
+`;

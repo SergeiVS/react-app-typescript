@@ -18,7 +18,9 @@ export const EmployeeAppContext = createContext<EmployeeContextType>({
   setEmployee: () => {},
 });
 
-export const EmployeeAppContextProvider = ({ children }: PropsWithChildren<LayoutProps>) => {
+function EmployeeAppContextProvider({
+  children,
+}: PropsWithChildren<LayoutProps>) {
   const [employee, setEmployee] = useState<Employee>({
     name: "",
     surName: "",
@@ -33,4 +35,6 @@ export const EmployeeAppContextProvider = ({ children }: PropsWithChildren<Layou
       {children}
     </EmployeeAppContext.Provider>
   );
-};
+}
+
+export default EmployeeAppContextProvider;
