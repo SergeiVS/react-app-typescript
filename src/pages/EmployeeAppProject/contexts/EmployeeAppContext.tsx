@@ -1,38 +1,34 @@
-import {
-  useState,
-  createContext,
-  PropsWithChildren,
-  ReactElement,
-} from "react";
+import { useState, createContext, PropsWithChildren } from "react";
 
+import { LayoutProps } from "pages/EmployeeAppProject/Layout_Team_1/types";
 import { Employee } from "pages/EmployeeAppProject/Layout_Team_1/types";
 
 export interface EmployeeContextType {
   employee: Employee;
-  setter: (e: Employee) => void;
+  setEmployee: (e: Employee) => void;
 }
 
 export const EmployeeAppContext = createContext<EmployeeContextType>({
   employee: {
     name: "",
     surName: "",
-    age: 0,
+    age: "",
     jobPosition: "",
   },
-  setter: () => void {},
+  setEmployee: () => {},
 });
 
-export const EmployeeAppContextProvider = ({ children }: PropsWithChildren) => {
+export const EmployeeAppContextProvider = ({ children }: PropsWithChildren<LayoutProps>) => {
   const [employee, setEmployee] = useState<Employee>({
     name: "",
     surName: "",
-    age: 0,
+    age: "",
     jobPosition: "",
   });
 
   return (
     <EmployeeAppContext.Provider
-      value={{ employee: employee, setter: setEmployee }}
+      value={{ employee: employee, setEmployee: setEmployee }}
     >
       {children}
     </EmployeeAppContext.Provider>

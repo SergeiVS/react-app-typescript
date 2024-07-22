@@ -7,7 +7,7 @@ export interface LayoutProps {
 export interface Employee {
   name: string;
   surName: string;
-  age: number;
+  age: number | string;
   jobPosition?: string;
 }
 export enum PagesPaths {
@@ -15,5 +15,3 @@ export enum PagesPaths {
   CREATE_EMPLOYEES = "/create",
   EMPLOYEES = "/employees",
 }
-
-

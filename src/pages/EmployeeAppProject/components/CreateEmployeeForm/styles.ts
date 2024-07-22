@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-export const UserDataFormContainer = styled ("form")`
-display: flex;
+export const UserDataFormContainer = styled("form")`
+  display: flex;
   flex-direction: column;
   width: 590px;
   min-height: 450px;
@@ -13,8 +13,8 @@ display: flex;
   gap: 30px;
 `;
 
-export const InputContainer = styled ("div")`
-display: flex;
+export const InputContainer = styled("div")`
+  display: flex;
   flex-direction: column;
   gap: 20px;
 `;
