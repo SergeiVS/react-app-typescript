@@ -1,4 +1,9 @@
-import { useState, createContext, PropsWithChildren } from "react";
+import {
+  useState,
+  createContext,
+  PropsWithChildren,
+  ReactElement,
+} from "react";
 
 import { Employee } from "pages/EmployeeAppProject/Layout_Team_1/types";
 
@@ -14,7 +19,7 @@ export const EmployeeAppContext = createContext<EmployeeContextType>({
     age: 0,
     jobPosition: "",
   },
-  setter: () => {},
+  setter: () => void {},
 });
 
 export const EmployeeAppContextProvider = ({ children }: PropsWithChildren) => {

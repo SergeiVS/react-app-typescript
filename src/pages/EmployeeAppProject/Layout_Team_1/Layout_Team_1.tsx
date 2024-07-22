@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { EmployeeAppContextProvider } from "../contexts/employeeAppContext";
+import { EmployeeAppContextProvider } from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
 
 import {
   LayoutWrapper,
@@ -13,7 +13,8 @@ import {
 
 import { LayoutProps, PagesPaths, Employee } from "./types";
 
-function Layout_Team_1({ children }: LayoutProps) {
+
+function Layout_Team_1({ children }:LayoutProps) {
   const navigate = useNavigate();
 
   const goToHomePage = () => {
