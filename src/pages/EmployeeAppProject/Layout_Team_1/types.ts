@@ -5,10 +5,10 @@ export interface LayoutProps {
 }
 
 export interface Employee {
-  name: string;
-  surName: string;
-  age: number | string;
-  jobPosition?: string;
+  name: string ;
+  surName: string ;
+  age: number | string ;
+  jobPosition?: string ;
 }
 export enum PagesPaths {
   HOME = "/",

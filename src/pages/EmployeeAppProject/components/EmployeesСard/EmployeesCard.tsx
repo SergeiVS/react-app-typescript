@@ -3,33 +3,27 @@ import { useContext } from "react";
 import { EmployeeAppContext } from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
 
 import { EmployeesCard, TextDiv, TextLabel, TextContent } from "./styles";
+import { Employee } from "pages/EmployeeAppProject/Layout_Team_1/types";
 
-function Employees_Card() {
-  const { employee } = useContext(EmployeeAppContext);
-
-  const isCardVisible = () => {
-    if (employee.name == "") {
-      return "none";
-    } else return "flex";
-  };
-
+function Employees_Card({name, surName, age, jobPosition}:Employee) {
+ 
   return (
-    <EmployeesCard style={{ display: isCardVisible() }}>
+    <EmployeesCard>
       <TextDiv>
         <TextLabel>Name</TextLabel>
-        <TextContent>{employee.name}</TextContent>
+        <TextContent>{name}</TextContent>
       </TextDiv>
       <TextDiv>
         <TextLabel>Surname</TextLabel>
-        <TextContent>{employee.surName}</TextContent>
+        <TextContent>{surName}</TextContent>
       </TextDiv>
       <TextDiv>
         <TextLabel>Age</TextLabel>
-        <TextContent>{employee.age}</TextContent>
+        <TextContent>{age}</TextContent>
       </TextDiv>
       <TextDiv>
         <TextLabel>Job Position</TextLabel>
-        <TextContent>{employee.jobPosition}</TextContent>
+        <TextContent>{jobPosition}</TextContent>
       </TextDiv>
     </EmployeesCard>
   );

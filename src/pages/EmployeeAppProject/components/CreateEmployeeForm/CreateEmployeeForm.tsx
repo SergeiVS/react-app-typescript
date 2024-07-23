@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useContext, useState } from "react";
+import { Alert } from "@mui/material";
 
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
@@ -43,10 +44,12 @@ function CreateEmployeeForm() {
       jobPosition: "",
     },
     validationSchema: validationSchema,
-    validateOnChange: false,
+    validateOnChange: true,
+
     onSubmit: (values, helpers) => {
-      employeeDataContext.setEmployee(values);
-      helpers.resetForm();
+      employeeDataContext.employees.push(values);
+      helpers.resetForm()
+      console.log(values);
       setModalOpen(true);
     },
   });
@@ -102,8 +105,9 @@ function CreateEmployeeForm() {
           type="submit"
         />
       </ButtonContainer>
+
       <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
-        Employee is created
+        <Alert severity="success">Employee added.</Alert>
       </Modal>
     </UserDataFormContainer>
   );

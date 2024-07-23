@@ -4,33 +4,23 @@ import { LayoutProps } from "pages/EmployeeAppProject/Layout_Team_1/types";
 import { Employee } from "pages/EmployeeAppProject/Layout_Team_1/types";
 
 export interface EmployeeContextType {
-  employee: Employee;
-  setEmployee: (e: Employee) => void;
+  employees: Employee[];
+  setEmployees: (e: Employee[]) => void;
 }
 
 export const EmployeeAppContext = createContext<EmployeeContextType>({
-  employee: {
-    name: "",
-    surName: "",
-    age: "",
-    jobPosition: "",
-  },
-  setEmployee: () => {},
+  employees: [],
+  setEmployees: ()=>{},
 });
 
 function EmployeeAppContextProvider({
   children,
 }: PropsWithChildren<LayoutProps>) {
-  const [employee, setEmployee] = useState<Employee>({
-    name: "",
-    surName: "",
-    age: "",
-    jobPosition: "",
-  });
+  const [employee, setEmployee] = useState<Employee[]>([]);
 
   return (
     <EmployeeAppContext.Provider
-      value={{ employee: employee, setEmployee: setEmployee }}
+      value={{ employees: employee, setEmployees: setEmployee }}
     >
       {children}
     </EmployeeAppContext.Provider>
