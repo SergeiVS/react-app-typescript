@@ -1,12 +1,7 @@
-import { useContext } from "react";
-
-import { EmployeeAppContext } from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
-
 import { EmployeesCard, TextDiv, TextLabel, TextContent } from "./styles";
 import { Employee } from "pages/EmployeeAppProject/Layout_Team_1/types";
 
-function Employees_Card({name, surName, age, jobPosition}:Employee) {
- 
+function Employees_Card({ name, surName, age, jobPosition }: Employee) {
   return (
     <EmployeesCard>
       <TextDiv>

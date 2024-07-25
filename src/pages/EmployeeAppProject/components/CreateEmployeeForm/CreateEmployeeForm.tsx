@@ -47,7 +47,7 @@ function CreateEmployeeForm() {
     validateOnChange: true,
 
     onSubmit: (values, helpers) => {
-      employeeDataContext.employees.push(values);
+      employeeDataContext.setEmployees((prevValue: Employee[])=>{ return [...prevValue, values]});
       helpers.resetForm()
       console.log(values);
       setModalOpen(true);

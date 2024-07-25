@@ -1,16 +1,21 @@
-import { useState, createContext, PropsWithChildren } from "react";
+import {
+  useState,
+  createContext,
+  PropsWithChildren,
+  SetStateAction,
+} from "react";
 
 import { LayoutProps } from "pages/EmployeeAppProject/Layout_Team_1/types";
 import { Employee } from "pages/EmployeeAppProject/Layout_Team_1/types";
 
 export interface EmployeeContextType {
   employees: Employee[];
-  setEmployees: (e: Employee[]) => void;
+  setEmployees: React.Dispatch<SetStateAction<Employee[]>>;
 }
 
 export const EmployeeAppContext = createContext<EmployeeContextType>({
   employees: [],
-  setEmployees: ()=>{},
+  setEmployees: () => {},
 });
 
 function EmployeeAppContextProvider({

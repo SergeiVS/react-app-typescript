@@ -13,7 +13,8 @@ function Employees() {
   const getEmployeesCards = (employees: Employee[]): ReactNode[] =>
     employees.map((emlpoyeeObj: Employee) => {
       return (
-        <Employees_Card key={v4()}
+        <Employees_Card
+          key={v4()}
           name={emlpoyeeObj.name}
           surName={emlpoyeeObj.surName}
           age={emlpoyeeObj.age}
